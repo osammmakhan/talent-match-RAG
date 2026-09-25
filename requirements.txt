@@ -1,0 +1,19 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+sentence-transformers
+pinecone
+openai
+
+# eval_generation.py also needs the OpenAI Evals framework, installed
+# separately so pip does not resolve its full dependency tree (D10):
+#   pip install --no-deps git+https://github.com/openai/evals.git
+# plus the packages its import path actually requires:
+blobfile
+dacite
+beartype
+backoff
+lz4
+tiktoken
+zstandard

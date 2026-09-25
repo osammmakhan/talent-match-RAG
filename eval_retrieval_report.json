@@ -1,0 +1,107 @@
+{
+  "method": "skill_overlap_baseline_precision_at_5",
+  "jobs_evaluated": 25,
+  "average_precision_at_5": 0.8240000000000001,
+  "per_job_scores": [
+    {
+      "job_id": "job_001",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_002",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_003",
+      "precision_at_5": 0.6
+    },
+    {
+      "job_id": "job_004",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_005",
+      "precision_at_5": 0.8
+    },
+    {
+      "job_id": "job_006",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_007",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_008",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_009",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_010",
+      "precision_at_5": 0.4
+    },
+    {
+      "job_id": "job_011",
+      "precision_at_5": 0.8
+    },
+    {
+      "job_id": "job_012",
+      "precision_at_5": 0.6
+    },
+    {
+      "job_id": "job_013",
+      "precision_at_5": 0.6
+    },
+    {
+      "job_id": "job_014",
+      "precision_at_5": 0.8
+    },
+    {
+      "job_id": "job_015",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_016",
+      "precision_at_5": 0.8
+    },
+    {
+      "job_id": "job_017",
+      "precision_at_5": 0.4
+    },
+    {
+      "job_id": "job_018",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_019",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_020",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_021",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_022",
+      "precision_at_5": 0.6
+    },
+    {
+      "job_id": "job_023",
+      "precision_at_5": 1.0
+    },
+    {
+      "job_id": "job_024",
+      "precision_at_5": 0.2
+    },
+    {
+      "job_id": "job_025",
+      "precision_at_5": 1.0
+    }
+  ]
+}

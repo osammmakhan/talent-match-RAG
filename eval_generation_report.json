@@ -1,0 +1,9 @@
+{
+  "method": "openai_evals_custom_groundedness_check",
+  "completion_provider": "groq",
+  "total_rationales_checked": 125,
+  "passed": 125,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "failures": []
+}

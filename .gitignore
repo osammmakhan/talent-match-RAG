@@ -1,0 +1,34 @@
+# secrets: never commit API keys
+.env
+.env.*
+!.env.example
+
+# internal project docs, not for the public repo
+BACKEND_SCHEMA.md
+PRD.md
+TRD.md
+
+# local design docs, not for the public repo
+PRD.md
+TRD.md
+BACKEND_SCHEMA.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Node (Phase 3 frontend)
+node_modules/
+dist/

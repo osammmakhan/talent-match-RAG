@@ -1,0 +1,558 @@
+[
+  {
+    "id": "cand_001",
+    "title": "AI Automation Engineer",
+    "skills": [
+      "Python",
+      "Git",
+      "RAG",
+      "LangChain"
+    ],
+    "years_experience": 11,
+    "location": "Warsaw",
+    "summary": "Experienced AI Automation Engineer (11 years) skilled in Python, Git, RAG, and LangChain. Located in Warsaw."
+  },
+  {
+    "id": "cand_002",
+    "title": "Backend Engineer",
+    "skills": [
+      "SQL",
+      "Docker",
+      "Python",
+      "Git",
+      "CI/CD",
+      "HTML"
+    ],
+    "years_experience": 10,
+    "location": "Berlin",
+    "summary": "Experienced Backend Engineer (10 years) skilled in SQL, Docker, Python, Git, CI/CD, and HTML. Located in Berlin."
+  },
+  {
+    "id": "cand_003",
+    "title": "Frontend Engineer",
+    "skills": [
+      "REST APIs",
+      "Git",
+      "HTML",
+      "CSS",
+      "PostgreSQL"
+    ],
+    "years_experience": 1,
+    "location": "Hamburg",
+    "summary": "Experienced Frontend Engineer (1 years) skilled in REST APIs, Git, HTML, CSS, and PostgreSQL. Located in Hamburg."
+  },
+  {
+    "id": "cand_004",
+    "title": "ML Engineer",
+    "skills": [
+      "PyTorch",
+      "Pandas",
+      "scikit-learn",
+      "Python"
+    ],
+    "years_experience": 7,
+    "location": "Munich",
+    "summary": "ML Engineer based in Munich, 7 years of hands-on experience building with PyTorch, Pandas, scikit-learn, and Python."
+  },
+  {
+    "id": "cand_005",
+    "title": "Data Engineer",
+    "skills": [
+      "PostgreSQL",
+      "Pandas",
+      "Python",
+      "Airflow"
+    ],
+    "years_experience": 9,
+    "location": "Amsterdam",
+    "summary": "Experienced Data Engineer (9 years) skilled in PostgreSQL, Pandas, Python, and Airflow. Located in Amsterdam."
+  },
+  {
+    "id": "cand_006",
+    "title": "Cloud Engineer",
+    "skills": [
+      "Terraform",
+      "CI/CD",
+      "Kubernetes",
+      "Linux"
+    ],
+    "years_experience": 5,
+    "location": "Munich",
+    "summary": "Cloud Engineer with 5 years of experience working primarily with Terraform, CI/CD, Kubernetes, and Linux. Based in Munich."
+  },
+  {
+    "id": "cand_007",
+    "title": "Backend Engineer",
+    "skills": [
+      "Docker",
+      "PostgreSQL",
+      "Git",
+      "REST APIs",
+      "FastAPI",
+      "LangChain"
+    ],
+    "years_experience": 5,
+    "location": "Warsaw",
+    "summary": "Experienced Backend Engineer (5 years) skilled in Docker, PostgreSQL, Git, REST APIs, FastAPI, and LangChain. Located in Warsaw."
+  },
+  {
+    "id": "cand_008",
+    "title": "AI Automation Engineer",
+    "skills": [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "REST APIs",
+      "PostgreSQL"
+    ],
+    "years_experience": 11,
+    "location": "Warsaw",
+    "summary": "Experienced AI Automation Engineer (11 years) skilled in Python, FastAPI, LangChain, REST APIs, and PostgreSQL. Located in Warsaw."
+  },
+  {
+    "id": "cand_009",
+    "title": "Frontend Engineer",
+    "skills": [
+      "REST APIs",
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "Airflow"
+    ],
+    "years_experience": 2,
+    "location": "Frankfurt",
+    "summary": "Experienced Frontend Engineer (2 years) skilled in REST APIs, React, JavaScript, TypeScript, and Airflow. Located in Frankfurt."
+  },
+  {
+    "id": "cand_010",
+    "title": "AI Automation Engineer",
+    "skills": [
+      "RAG",
+      "LangChain",
+      "LLM APIs",
+      "FastAPI",
+      "SQL"
+    ],
+    "years_experience": 3,
+    "location": "Frankfurt",
+    "summary": "Experienced AI Automation Engineer (3 years) skilled in RAG, LangChain, LLM APIs, FastAPI, and SQL. Located in Frankfurt."
+  },
+  {
+    "id": "cand_011",
+    "title": "Cloud Engineer",
+    "skills": [
+      "CI/CD",
+      "Terraform",
+      "Docker",
+      "Linux"
+    ],
+    "years_experience": 9,
+    "location": "Dublin",
+    "summary": "Cloud Engineer with 9 years of experience working primarily with CI/CD, Terraform, Docker, and Linux. Based in Dublin."
+  },
+  {
+    "id": "cand_012",
+    "title": "Backend Engineer",
+    "skills": [
+      "Git",
+      "Python",
+      "FastAPI",
+      "SQL"
+    ],
+    "years_experience": 7,
+    "location": "Zurich",
+    "summary": "Experienced Backend Engineer (7 years) skilled in Git, Python, FastAPI, and SQL. Located in Zurich."
+  },
+  {
+    "id": "cand_013",
+    "title": "ML Engineer",
+    "skills": [
+      "Docker",
+      "PyTorch",
+      "Python",
+      "Pandas",
+      "dbt",
+      "CSS"
+    ],
+    "years_experience": 5,
+    "location": "Prague",
+    "summary": "ML Engineer based in Prague, 5 years of hands-on experience building with Docker, PyTorch, Python, Pandas, dbt, and CSS."
+  },
+  {
+    "id": "cand_014",
+    "title": "Backend Engineer",
+    "skills": [
+      "PostgreSQL",
+      "Docker",
+      "FastAPI",
+      "REST APIs",
+      "AWS",
+      "dbt"
+    ],
+    "years_experience": 3,
+    "location": "Lisbon",
+    "summary": "Backend Engineer with 3 years of experience working primarily with PostgreSQL, Docker, FastAPI, REST APIs, AWS, and dbt. Based in Lisbon."
+  },
+  {
+    "id": "cand_015",
+    "title": "AI Automation Engineer",
+    "skills": [
+      "RAG",
+      "REST APIs",
+      "FastAPI",
+      "LangChain"
+    ],
+    "years_experience": 9,
+    "location": "Lisbon",
+    "summary": "AI Automation Engineer with 9 years of experience working primarily with RAG, REST APIs, FastAPI, and LangChain. Based in Lisbon."
+  },
+  {
+    "id": "cand_016",
+    "title": "Cloud Engineer",
+    "skills": [
+      "Terraform",
+      "Docker",
+      "AWS",
+      "CI/CD"
+    ],
+    "years_experience": 4,
+    "location": "Barcelona",
+    "summary": "Cloud Engineer with 4 years of experience working primarily with Terraform, Docker, AWS, and CI/CD. Based in Barcelona."
+  },
+  {
+    "id": "cand_017",
+    "title": "Backend Engineer",
+    "skills": [
+      "REST APIs",
+      "Docker",
+      "Python",
+      "FastAPI",
+      "Terraform",
+      "PyTorch"
+    ],
+    "years_experience": 3,
+    "location": "Amsterdam",
+    "summary": "Experienced Backend Engineer (3 years) skilled in REST APIs, Docker, Python, FastAPI, Terraform, and PyTorch. Located in Amsterdam."
+  },
+  {
+    "id": "cand_018",
+    "title": "Cloud Engineer",
+    "skills": [
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Terraform",
+      "Linux"
+    ],
+    "years_experience": 6,
+    "location": "Dublin",
+    "summary": "Experienced Cloud Engineer (6 years) skilled in Docker, Kubernetes, CI/CD, Terraform, and Linux. Located in Dublin."
+  },
+  {
+    "id": "cand_019",
+    "title": "ML Engineer",
+    "skills": [
+      "Python",
+      "scikit-learn",
+      "Docker",
+      "Pandas",
+      "LLM APIs",
+      "AWS"
+    ],
+    "years_experience": 4,
+    "location": "Barcelona",
+    "summary": "ML Engineer with 4 years of experience working primarily with Python, scikit-learn, Docker, Pandas, LLM APIs, and AWS. Based in Barcelona."
+  },
+  {
+    "id": "cand_020",
+    "title": "Backend Engineer",
+    "skills": [
+      "Python",
+      "REST APIs",
+      "Git",
+      "FastAPI"
+    ],
+    "years_experience": 9,
+    "location": "Frankfurt",
+    "summary": "Backend Engineer based in Frankfurt, 9 years of hands-on experience building with Python, REST APIs, Git, and FastAPI."
+  },
+  {
+    "id": "cand_021",
+    "title": "AI Automation Engineer",
+    "skills": [
+      "LLM APIs",
+      "LangChain",
+      "FastAPI",
+      "REST APIs"
+    ],
+    "years_experience": 8,
+    "location": "Zurich",
+    "summary": "AI Automation Engineer with 8 years of experience working primarily with LLM APIs, LangChain, FastAPI, and REST APIs. Based in Zurich."
+  },
+  {
+    "id": "cand_022",
+    "title": "Backend Engineer",
+    "skills": [
+      "Python",
+      "REST APIs",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "years_experience": 11,
+    "location": "Prague",
+    "summary": "Experienced Backend Engineer (11 years) skilled in Python, REST APIs, Docker, and PostgreSQL. Located in Prague."
+  },
+  {
+    "id": "cand_023",
+    "title": "Backend Engineer",
+    "skills": [
+      "Python",
+      "Docker",
+      "PostgreSQL",
+      "Git",
+      "HTML"
+    ],
+    "years_experience": 3,
+    "location": "Zurich",
+    "summary": "Backend Engineer with 3 years of experience working primarily with Python, Docker, PostgreSQL, Git, and HTML. Based in Zurich."
+  },
+  {
+    "id": "cand_024",
+    "title": "Data Engineer",
+    "skills": [
+      "Airflow",
+      "SQL",
+      "Python",
+      "Docker",
+      "RAG",
+      "CSS"
+    ],
+    "years_experience": 9,
+    "location": "Berlin",
+    "summary": "Data Engineer with 9 years of experience working primarily with Airflow, SQL, Python, Docker, RAG, and CSS. Based in Berlin."
+  },
+  {
+    "id": "cand_025",
+    "title": "Frontend Engineer",
+    "skills": [
+      "TypeScript",
+      "CSS",
+      "REST APIs",
+      "HTML"
+    ],
+    "years_experience": 7,
+    "location": "Berlin",
+    "summary": "Frontend Engineer based in Berlin, 7 years of hands-on experience building with TypeScript, CSS, REST APIs, and HTML."
+  },
+  {
+    "id": "cand_026",
+    "title": "Data Engineer",
+    "skills": [
+      "Docker",
+      "Airflow",
+      "Pandas",
+      "dbt",
+      "TypeScript",
+      "RAG"
+    ],
+    "years_experience": 12,
+    "location": "Dublin",
+    "summary": "Data Engineer with 12 years of experience working primarily with Docker, Airflow, Pandas, dbt, TypeScript, and RAG. Based in Dublin."
+  },
+  {
+    "id": "cand_027",
+    "title": "Frontend Engineer",
+    "skills": [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "HTML"
+    ],
+    "years_experience": 10,
+    "location": "Dublin",
+    "summary": "Experienced Frontend Engineer (10 years) skilled in React, TypeScript, JavaScript, and HTML. Located in Dublin."
+  },
+  {
+    "id": "cand_028",
+    "title": "Cloud Engineer",
+    "skills": [
+      "Kubernetes",
+      "AWS",
+      "CI/CD",
+      "Docker"
+    ],
+    "years_experience": 7,
+    "location": "Munich",
+    "summary": "Experienced Cloud Engineer (7 years) skilled in Kubernetes, AWS, CI/CD, and Docker. Located in Munich."
+  },
+  {
+    "id": "cand_029",
+    "title": "Frontend Engineer",
+    "skills": [
+      "HTML",
+      "Git",
+      "JavaScript",
+      "REST APIs",
+      "Pandas",
+      "Terraform"
+    ],
+    "years_experience": 9,
+    "location": "Vienna",
+    "summary": "Frontend Engineer based in Vienna, 9 years of hands-on experience building with HTML, Git, JavaScript, REST APIs, Pandas, and Terraform."
+  },
+  {
+    "id": "cand_030",
+    "title": "Frontend Engineer",
+    "skills": [
+      "REST APIs",
+      "Git",
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Linux"
+    ],
+    "years_experience": 11,
+    "location": "Amsterdam",
+    "summary": "Frontend Engineer based in Amsterdam, 11 years of hands-on experience building with REST APIs, Git, React, TypeScript, JavaScript, and Linux."
+  },
+  {
+    "id": "cand_031",
+    "title": "Data Engineer",
+    "skills": [
+      "Docker",
+      "Python",
+      "dbt",
+      "Airflow"
+    ],
+    "years_experience": 9,
+    "location": "Frankfurt",
+    "summary": "Experienced Data Engineer (9 years) skilled in Docker, Python, dbt, and Airflow. Located in Frankfurt."
+  },
+  {
+    "id": "cand_032",
+    "title": "Data Engineer",
+    "skills": [
+      "SQL",
+      "Pandas",
+      "Python",
+      "Docker",
+      "LangChain"
+    ],
+    "years_experience": 9,
+    "location": "Warsaw",
+    "summary": "Data Engineer based in Warsaw, 9 years of hands-on experience building with SQL, Pandas, Python, Docker, and LangChain."
+  },
+  {
+    "id": "cand_033",
+    "title": "Cloud Engineer",
+    "skills": [
+      "Linux",
+      "CI/CD",
+      "AWS",
+      "Terraform"
+    ],
+    "years_experience": 3,
+    "location": "Amsterdam",
+    "summary": "Cloud Engineer with 3 years of experience working primarily with Linux, CI/CD, AWS, and Terraform. Based in Amsterdam."
+  },
+  {
+    "id": "cand_034",
+    "title": "Backend Engineer",
+    "skills": [
+      "REST APIs",
+      "SQL",
+      "FastAPI",
+      "PostgreSQL",
+      "Kubernetes",
+      "React"
+    ],
+    "years_experience": 6,
+    "location": "Frankfurt",
+    "summary": "Experienced Backend Engineer (6 years) skilled in REST APIs, SQL, FastAPI, PostgreSQL, Kubernetes, and React. Located in Frankfurt."
+  },
+  {
+    "id": "cand_035",
+    "title": "AI Automation Engineer",
+    "skills": [
+      "Git",
+      "RAG",
+      "FastAPI",
+      "LLM APIs",
+      "JavaScript",
+      "Airflow"
+    ],
+    "years_experience": 7,
+    "location": "Amsterdam",
+    "summary": "AI Automation Engineer with 7 years of experience working primarily with Git, RAG, FastAPI, LLM APIs, JavaScript, and Airflow. Based in Amsterdam."
+  },
+  {
+    "id": "cand_036",
+    "title": "Backend Engineer",
+    "skills": [
+      "PostgreSQL",
+      "FastAPI",
+      "Git",
+      "REST APIs",
+      "dbt",
+      "RAG"
+    ],
+    "years_experience": 7,
+    "location": "Lisbon",
+    "summary": "Backend Engineer with 7 years of experience working primarily with PostgreSQL, FastAPI, Git, REST APIs, dbt, and RAG. Based in Lisbon."
+  },
+  {
+    "id": "cand_037",
+    "title": "Backend Engineer",
+    "skills": [
+      "Python",
+      "REST APIs",
+      "FastAPI",
+      "Git"
+    ],
+    "years_experience": 7,
+    "location": "Hamburg",
+    "summary": "Backend Engineer with 7 years of experience working primarily with Python, REST APIs, FastAPI, and Git. Based in Hamburg."
+  },
+  {
+    "id": "cand_038",
+    "title": "Data Engineer",
+    "skills": [
+      "Pandas",
+      "Python",
+      "Docker",
+      "SQL",
+      "Terraform"
+    ],
+    "years_experience": 9,
+    "location": "Zurich",
+    "summary": "Experienced Data Engineer (9 years) skilled in Pandas, Python, Docker, SQL, and Terraform. Located in Zurich."
+  },
+  {
+    "id": "cand_039",
+    "title": "AI Automation Engineer",
+    "skills": [
+      "LangChain",
+      "Git",
+      "REST APIs",
+      "FastAPI",
+      "Pandas",
+      "AWS"
+    ],
+    "years_experience": 6,
+    "location": "Zurich",
+    "summary": "Experienced AI Automation Engineer (6 years) skilled in LangChain, Git, REST APIs, FastAPI, Pandas, and AWS. Located in Zurich."
+  },
+  {
+    "id": "cand_040",
+    "title": "AI Automation Engineer",
+    "skills": [
+      "Git",
+      "LangChain",
+      "RAG",
+      "REST APIs"
+    ],
+    "years_experience": 8,
+    "location": "Frankfurt",
+    "summary": "AI Automation Engineer with 8 years of experience working primarily with Git, LangChain, RAG, and REST APIs. Based in Frankfurt."
+  }
+]

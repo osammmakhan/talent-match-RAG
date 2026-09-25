@@ -1,0 +1,326 @@
+[
+  {
+    "id": "job_001",
+    "title": "ML Engineer",
+    "required_skills": [
+      "PyTorch",
+      "scikit-learn",
+      "Docker",
+      "Python"
+    ],
+    "min_years_experience": 4,
+    "location": "Zurich",
+    "summary": "Join our Zurich team as a ML Engineer. You will work with PyTorch, scikit-learn, Docker, and Python and bring at least 4 years of experience."
+  },
+  {
+    "id": "job_002",
+    "title": "Data Engineer",
+    "required_skills": [
+      "Docker",
+      "Pandas",
+      "dbt"
+    ],
+    "min_years_experience": 7,
+    "location": "Prague",
+    "summary": "Opening for a Data Engineer in Prague. Candidates should have 7+ years of experience across Docker, Pandas, and dbt."
+  },
+  {
+    "id": "job_003",
+    "title": "Data Engineer",
+    "required_skills": [
+      "Python",
+      "Pandas",
+      "SQL"
+    ],
+    "min_years_experience": 5,
+    "location": "Berlin",
+    "summary": "We are hiring a Data Engineer to join our team in Berlin. The role requires 5+ years of experience with Python, Pandas, and SQL."
+  },
+  {
+    "id": "job_004",
+    "title": "Cloud Engineer",
+    "required_skills": [
+      "Terraform",
+      "Linux",
+      "Docker",
+      "CI/CD"
+    ],
+    "min_years_experience": 2,
+    "location": "Zurich",
+    "summary": "Opening for a Cloud Engineer in Zurich. Candidates should have 2+ years of experience across Terraform, Linux, Docker, and CI/CD."
+  },
+  {
+    "id": "job_005",
+    "title": "Frontend Engineer",
+    "required_skills": [
+      "JavaScript",
+      "REST APIs",
+      "CSS",
+      "Git"
+    ],
+    "min_years_experience": 4,
+    "location": "Vienna",
+    "summary": "Join our Vienna team as a Frontend Engineer. You will work with JavaScript, REST APIs, CSS, and Git and bring at least 4 years of experience."
+  },
+  {
+    "id": "job_006",
+    "title": "Backend Engineer",
+    "required_skills": [
+      "PostgreSQL",
+      "SQL",
+      "Git",
+      "Python",
+      "REST APIs"
+    ],
+    "min_years_experience": 5,
+    "location": "Lisbon",
+    "summary": "Join our Lisbon team as a Backend Engineer. You will work with PostgreSQL, SQL, Git, Python, and REST APIs and bring at least 5 years of experience."
+  },
+  {
+    "id": "job_007",
+    "title": "AI Automation Engineer",
+    "required_skills": [
+      "RAG",
+      "LLM APIs",
+      "Git",
+      "LangChain"
+    ],
+    "min_years_experience": 4,
+    "location": "Zurich",
+    "summary": "Opening for a AI Automation Engineer in Zurich. Candidates should have 4+ years of experience across RAG, LLM APIs, Git, and LangChain."
+  },
+  {
+    "id": "job_008",
+    "title": "ML Engineer",
+    "required_skills": [
+      "Pandas",
+      "scikit-learn",
+      "PyTorch",
+      "Docker",
+      "Python"
+    ],
+    "min_years_experience": 5,
+    "location": "Amsterdam",
+    "summary": "We are hiring a ML Engineer to join our team in Amsterdam. The role requires 5+ years of experience with Pandas, scikit-learn, PyTorch, Docker, and Python."
+  },
+  {
+    "id": "job_009",
+    "title": "ML Engineer",
+    "required_skills": [
+      "Docker",
+      "PyTorch",
+      "SQL",
+      "scikit-learn",
+      "Pandas"
+    ],
+    "min_years_experience": 4,
+    "location": "Lisbon",
+    "summary": "Join our Lisbon team as a ML Engineer. You will work with Docker, PyTorch, SQL, scikit-learn, and Pandas and bring at least 4 years of experience."
+  },
+  {
+    "id": "job_010",
+    "title": "AI Automation Engineer",
+    "required_skills": [
+      "REST APIs",
+      "Python",
+      "RAG"
+    ],
+    "min_years_experience": 6,
+    "location": "Munich",
+    "summary": "We are hiring a AI Automation Engineer to join our team in Munich. The role requires 6+ years of experience with REST APIs, Python, and RAG."
+  },
+  {
+    "id": "job_011",
+    "title": "AI Automation Engineer",
+    "required_skills": [
+      "LangChain",
+      "Git",
+      "REST APIs",
+      "Python"
+    ],
+    "min_years_experience": 1,
+    "location": "Frankfurt",
+    "summary": "Join our Frankfurt team as a AI Automation Engineer. You will work with LangChain, Git, REST APIs, and Python and bring at least 1 years of experience."
+  },
+  {
+    "id": "job_012",
+    "title": "Cloud Engineer",
+    "required_skills": [
+      "Docker",
+      "Linux",
+      "Kubernetes"
+    ],
+    "min_years_experience": 7,
+    "location": "Dublin",
+    "summary": "Join our Dublin team as a Cloud Engineer. You will work with Docker, Linux, and Kubernetes and bring at least 7 years of experience."
+  },
+  {
+    "id": "job_013",
+    "title": "Frontend Engineer",
+    "required_skills": [
+      "REST APIs",
+      "Git",
+      "JavaScript"
+    ],
+    "min_years_experience": 2,
+    "location": "Zurich",
+    "summary": "We are hiring a Frontend Engineer to join our team in Zurich. The role requires 2+ years of experience with REST APIs, Git, and JavaScript."
+  },
+  {
+    "id": "job_014",
+    "title": "Frontend Engineer",
+    "required_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Git"
+    ],
+    "min_years_experience": 8,
+    "location": "Hamburg",
+    "summary": "Join our Hamburg team as a Frontend Engineer. You will work with HTML, CSS, JavaScript, TypeScript, and Git and bring at least 8 years of experience."
+  },
+  {
+    "id": "job_015",
+    "title": "AI Automation Engineer",
+    "required_skills": [
+      "FastAPI",
+      "Git",
+      "RAG",
+      "LLM APIs",
+      "REST APIs"
+    ],
+    "min_years_experience": 7,
+    "location": "Lisbon",
+    "summary": "Join our Lisbon team as a AI Automation Engineer. You will work with FastAPI, Git, RAG, LLM APIs, and REST APIs and bring at least 7 years of experience."
+  },
+  {
+    "id": "job_016",
+    "title": "Frontend Engineer",
+    "required_skills": [
+      "Git",
+      "CSS",
+      "REST APIs",
+      "React",
+      "JavaScript"
+    ],
+    "min_years_experience": 5,
+    "location": "Lisbon",
+    "summary": "Join our Lisbon team as a Frontend Engineer. You will work with Git, CSS, REST APIs, React, and JavaScript and bring at least 5 years of experience."
+  },
+  {
+    "id": "job_017",
+    "title": "AI Automation Engineer",
+    "required_skills": [
+      "RAG",
+      "LLM APIs",
+      "Python"
+    ],
+    "min_years_experience": 5,
+    "location": "Frankfurt",
+    "summary": "Join our Frankfurt team as a AI Automation Engineer. You will work with RAG, LLM APIs, and Python and bring at least 5 years of experience."
+  },
+  {
+    "id": "job_018",
+    "title": "Data Engineer",
+    "required_skills": [
+      "PostgreSQL",
+      "Python",
+      "SQL",
+      "Docker"
+    ],
+    "min_years_experience": 4,
+    "location": "Zurich",
+    "summary": "Opening for a Data Engineer in Zurich. Candidates should have 4+ years of experience across PostgreSQL, Python, SQL, and Docker."
+  },
+  {
+    "id": "job_019",
+    "title": "Frontend Engineer",
+    "required_skills": [
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Git"
+    ],
+    "min_years_experience": 8,
+    "location": "Zurich",
+    "summary": "We are hiring a Frontend Engineer to join our team in Zurich. The role requires 8+ years of experience with TypeScript, JavaScript, CSS, HTML, and Git."
+  },
+  {
+    "id": "job_020",
+    "title": "Frontend Engineer",
+    "required_skills": [
+      "CSS",
+      "HTML",
+      "JavaScript",
+      "Git"
+    ],
+    "min_years_experience": 8,
+    "location": "Berlin",
+    "summary": "Join our Berlin team as a Frontend Engineer. You will work with CSS, HTML, JavaScript, and Git and bring at least 8 years of experience."
+  },
+  {
+    "id": "job_021",
+    "title": "Data Engineer",
+    "required_skills": [
+      "Docker",
+      "Airflow",
+      "PostgreSQL",
+      "SQL"
+    ],
+    "min_years_experience": 8,
+    "location": "Frankfurt",
+    "summary": "Join our Frankfurt team as a Data Engineer. You will work with Docker, Airflow, PostgreSQL, and SQL and bring at least 8 years of experience."
+  },
+  {
+    "id": "job_022",
+    "title": "ML Engineer",
+    "required_skills": [
+      "Python",
+      "SQL",
+      "PyTorch",
+      "Docker"
+    ],
+    "min_years_experience": 7,
+    "location": "Warsaw",
+    "summary": "We are hiring a ML Engineer to join our team in Warsaw. The role requires 7+ years of experience with Python, SQL, PyTorch, and Docker."
+  },
+  {
+    "id": "job_023",
+    "title": "ML Engineer",
+    "required_skills": [
+      "Docker",
+      "Pandas",
+      "Python"
+    ],
+    "min_years_experience": 7,
+    "location": "Barcelona",
+    "summary": "Opening for a ML Engineer in Barcelona. Candidates should have 7+ years of experience across Docker, Pandas, and Python."
+  },
+  {
+    "id": "job_024",
+    "title": "AI Automation Engineer",
+    "required_skills": [
+      "Python",
+      "REST APIs",
+      "LLM APIs"
+    ],
+    "min_years_experience": 3,
+    "location": "Dublin",
+    "summary": "We are hiring a AI Automation Engineer to join our team in Dublin. The role requires 3+ years of experience with Python, REST APIs, and LLM APIs."
+  },
+  {
+    "id": "job_025",
+    "title": "Backend Engineer",
+    "required_skills": [
+      "Docker",
+      "PostgreSQL",
+      "FastAPI",
+      "Git"
+    ],
+    "min_years_experience": 6,
+    "location": "Vienna",
+    "summary": "Join our Vienna team as a Backend Engineer. You will work with Docker, PostgreSQL, FastAPI, and Git and bring at least 6 years of experience."
+  }
+]

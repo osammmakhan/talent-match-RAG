@@ -1,0 +1,555 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "generated": {
+    "job_001": [
+      {
+        "candidate_id": "cand_004",
+        "rationale": "The candidate’s background aligns well with the role, demonstrating expertise in PyTorch, scikit-learn, and Python, which are core requirements. With seven years of relevant experience, they exceed the minimum four‑year threshold. However, the candidate does not list Docker experience and is based in Munich rather than Zurich."
+      },
+      {
+        "candidate_id": "cand_013",
+        "rationale": "The candidate has 5 years of experience, exceeding the 4‑year minimum, and possesses Docker, PyTorch, and Python, which align with three of the four required skills. While the candidate does not list scikit‑learn, the strong overlap in core tools and sufficient experience make them a solid match for the ML Engineer role."
+      },
+      {
+        "candidate_id": "cand_019",
+        "rationale": "The candidate has the required four years of experience and possesses Python, scikit-learn, and Docker, which align with the job’s core technical requirements. However, the candidate’s profile does not list PyTorch, a mandatory skill for the role."
+      },
+      {
+        "candidate_id": "cand_038",
+        "rationale": "The candidate is based in Zurich and brings 9 years of experience, comfortably exceeding the four‑year minimum. They also have proven expertise with Python and Docker, which directly match two of the required skills for the role."
+      },
+      {
+        "candidate_id": "cand_023",
+        "rationale": "The candidate shares relevant experience with the role in Python, Docker, and being based in Zurich, which aligns with the job’s location and core tooling. However, the candidate does not list PyTorch or scikit-learn and has only three years of experience, falling short of the four‑year minimum. Consequently, the match is partial but does not meet all required qualifications."
+      }
+    ],
+    "job_002": [
+      {
+        "candidate_id": "cand_026",
+        "rationale": "The candidate possesses Docker, Pandas, and dbt, matching all required technical skills. With 12 years of data engineering experience, they exceed the minimum 7‑year requirement."
+      },
+      {
+        "candidate_id": "cand_038",
+        "rationale": "The candidate brings 9 years of data‑engineering experience, surpassing the 7‑year minimum required. They also have hands‑on expertise with both Docker and Pandas, directly matching two of the three required skills."
+      },
+      {
+        "candidate_id": "cand_013",
+        "rationale": "The candidate possesses Docker, Pandas, and dbt experience, aligning with the core technical requirements of the role and is also based in Prague. However, with only five years of overall experience, they fall short of the seven‑year minimum stipulated for the position. Consequently, the match is strong on skills and location but weak on the required experience level."
+      },
+      {
+        "candidate_id": "cand_031",
+        "rationale": "The candidate offers 9 years of data‑engineering experience, surpassing the 7‑year minimum. They have demonstrated expertise with Docker and dbt, matching two of the three required tools, though Pandas is not listed among their skills."
+      },
+      {
+        "candidate_id": "cand_032",
+        "rationale": "The candidate brings 9 years of experience, exceeding the 7‑year minimum required for the role. They also have hands‑on expertise with Docker and Pandas, directly matching two of the key tools listed in the job description."
+      }
+    ],
+    "job_003": [
+      {
+        "candidate_id": "cand_024",
+        "rationale": "The candidate has 9 years of experience, exceeding the 5‑year minimum, and is based in Berlin, matching the location requirement. They also list Python and SQL, which align directly with the required technical skills."
+      },
+      {
+        "candidate_id": "cand_032",
+        "rationale": "The candidate possesses all required skills—Python, Pandas, and SQL—and also brings additional expertise in Docker and LangChain. With nine years of relevant experience, they exceed the five‑year minimum stated in the job. This strong alignment indicates a solid technical fit for the Data Engineer role."
+      },
+      {
+        "candidate_id": "cand_026",
+        "rationale": "The candidate brings 12 years of data‑engineering experience, comfortably exceeding the 5‑year minimum. They also list Pandas among their skills, matching one of the required tools. However, the candidate’s profile does not mention Python or SQL, so the fit is partial."
+      },
+      {
+        "candidate_id": "cand_038",
+        "rationale": "The candidate possesses all three required technical skills—Python, Pandas, and SQL—and brings nine years of data engineering experience, comfortably exceeding the five‑year minimum. This strong alignment of core competencies makes them a solid match for the role."
+      },
+      {
+        "candidate_id": "cand_031",
+        "rationale": "The candidate has Python experience and exceeds the required five years, with nine years as a Data Engineer. However, the candidate does not list Pandas or SQL among their skills, and they are based in Frankfurt rather than Berlin."
+      }
+    ],
+    "job_004": [
+      {
+        "candidate_id": "cand_033",
+        "rationale": "The candidate possesses three of the four required skills—Terraform, Linux, and CI/CD—and brings three years of relevant experience, exceeding the two‑year minimum. Their background aligns well with the core technical requirements of the Cloud Engineer role."
+      },
+      {
+        "candidate_id": "cand_011",
+        "rationale": "The candidate possesses all four required skills—Terraform, Linux, Docker, and CI/CD—and has nine years of relevant experience, well above the two‑year minimum. Their background as a Cloud Engineer aligns directly with the role’s technical focus. However, the candidate is currently based in Dublin while the position is located in Zurich."
+      },
+      {
+        "candidate_id": "cand_006",
+        "rationale": "The candidate possesses Terraform, Linux, and CI/CD, which are all required for the role. With five years of relevant experience, they exceed the minimum two‑year requirement."
+      },
+      {
+        "candidate_id": "cand_016",
+        "rationale": "The candidate has 4 years of experience, exceeding the 2‑year minimum, and possesses Terraform, Docker, and CI/CD expertise, all of which are required for the role. While the job also lists Linux, the candidate’s strong background in the other three core technologies aligns well with the Cloud Engineer position."
+      },
+      {
+        "candidate_id": "cand_018",
+        "rationale": "The candidate has six years of cloud‑engineering experience, well above the two‑year minimum. They list Terraform, Linux, Docker and CI/CD, which align exactly with the required skill set. Their background therefore matches the core technical requirements of the role."
+      }
+    ],
+    "job_005": [
+      {
+        "candidate_id": "cand_029",
+        "rationale": "The candidate’s profile aligns well with the Frontend Engineer role, showing direct experience with JavaScript, REST APIs, and Git, which are all listed as required skills. They also exceed the minimum experience threshold, offering nine years of relevant work, and are based in Vienna, matching the location requirement."
+      },
+      {
+        "candidate_id": "cand_025",
+        "rationale": "The candidate’s background aligns well with the role through solid experience with CSS and REST APIs, both listed as required skills. Additionally, with seven years of relevant frontend experience, they exceed the minimum four‑year requirement."
+      },
+      {
+        "candidate_id": "cand_030",
+        "rationale": "The candidate possesses the required JavaScript, REST APIs, and Git skills and brings 11 years of relevant experience, well above the 4‑year minimum. This strong alignment with the core technical requirements makes them a solid fit for the Frontend Engineer role."
+      },
+      {
+        "candidate_id": "cand_023",
+        "rationale": "The candidate shares experience with Git, which aligns with the job’s required tool. However, they do not list JavaScript, REST APIs, or CSS, and their three years of experience falls short of the four‑year minimum. Consequently, the overall match is weak."
+      },
+      {
+        "candidate_id": "cand_037",
+        "rationale": "The candidate exceeds the required four years of experience with seven years and demonstrates proficiency in REST APIs and Git, both listed in the job description. However, the candidate does not list JavaScript or CSS, which are also required for the Frontend Engineer role. Consequently, while the experience level and some technical skills align, key frontend technologies are missing."
+      }
+    ],
+    "job_006": [
+      {
+        "candidate_id": "cand_036",
+        "rationale": "The candidate has 7 years of backend engineering experience, exceeding the 5‑year minimum, and is based in Lisbon. Their skill set includes PostgreSQL, Git, and REST APIs, which directly match three of the required technologies. This alignment makes them a strong fit for the role."
+      },
+      {
+        "candidate_id": "cand_014",
+        "rationale": "The candidate is based in Lisbon and has hands‑on experience with PostgreSQL and building REST APIs, which aligns with the role’s core requirements. However, they have only three years of experience, falling short of the five‑year minimum, and they do not list SQL, Git, or Python, which are also required."
+      },
+      {
+        "candidate_id": "cand_023",
+        "rationale": "The candidate shares three of the required technical skills—Python, PostgreSQL, and Git—with the job description. However, they do not list SQL or REST API experience, have only three years of relevant work versus the five‑year minimum, and are based in Zurich rather than Lisbon. Consequently, the overall fit is limited."
+      },
+      {
+        "candidate_id": "cand_037",
+        "rationale": "The candidate meets the required experience level with 7 years, exceeding the minimum of 5 years, and possesses the core skills listed in the job posting: Python, REST APIs, and Git. These overlapping qualifications indicate a strong fit for the Backend Engineer role."
+      },
+      {
+        "candidate_id": "cand_022",
+        "rationale": "The candidate possesses the required Python, REST APIs, and PostgreSQL skills and brings 11 years of backend engineering experience, comfortably exceeding the 5‑year minimum. All of these qualifications align directly with the job’s essential requirements."
+      }
+    ],
+    "job_007": [
+      {
+        "candidate_id": "cand_039",
+        "rationale": "The candidate matches the Zurich location and exceeds the four‑year minimum with six years of AI automation experience. They possess two of the required skills—Git and LangChain—demonstrating relevant expertise for the role."
+      },
+      {
+        "candidate_id": "cand_021",
+        "rationale": "The candidate matches the role’s core requirements, possessing both LLM APIs and LangChain experience. With eight years of relevant work, they exceed the four‑year minimum, and they are based in Zurich, aligning with the location requirement."
+      },
+      {
+        "candidate_id": "cand_035",
+        "rationale": "The candidate demonstrates strong alignment with the role, possessing three of the four required skills—Git, RAG, and LLM APIs—and brings 7 years of relevant experience, well above the 4‑year minimum. While the candidate does not list LangChain, the existing skill set and extensive background make them a solid fit for the AI Automation Engineer position."
+      },
+      {
+        "candidate_id": "cand_040",
+        "rationale": "The candidate matches three of the four required skills—RAG, Git, and LangChain—and brings eight years of relevant experience, well above the four‑year minimum. While the job also lists LLM APIs, the candidate’s profile does not mention that technology."
+      },
+      {
+        "candidate_id": "cand_015",
+        "rationale": "The candidate brings strong expertise in both RAG and LangChain, matching two of the core requirements for the role. With nine years of experience, they exceed the minimum four‑year threshold specified in the job posting. This alignment of key skills and extensive experience makes them a solid fit for the AI Automation Engineer position."
+      }
+    ],
+    "job_008": [
+      {
+        "candidate_id": "cand_019",
+        "rationale": "The candidate demonstrates strong alignment with the role’s core technical requirements, possessing experience with Python, Pandas, scikit-learn, and Docker. However, they do not list experience with PyTorch, fall short of the five‑year minimum (having four years), and are based in Barcelona rather than Amsterdam."
+      },
+      {
+        "candidate_id": "cand_004",
+        "rationale": "The candidate possesses Pandas, scikit-learn, PyTorch, and Python, covering the core technical requirements, and brings 7 years of experience, surpassing the 5‑year minimum. Docker, however, is not listed among the candidate’s skills."
+      },
+      {
+        "candidate_id": "cand_013",
+        "rationale": "The candidate brings five years of experience, satisfying the minimum requirement. Their skill set includes Docker, PyTorch, Python and Pandas, all of which are listed in the job description."
+      },
+      {
+        "candidate_id": "cand_005",
+        "rationale": "The candidate has 9 years of experience, exceeding the 5‑year minimum, and is based in Amsterdam. Their skill set includes Pandas and Python, which directly align with two of the required technologies for the ML Engineer role."
+      },
+      {
+        "candidate_id": "cand_026",
+        "rationale": "The candidate brings 12 years of experience, comfortably exceeding the 5‑year minimum, and possesses Docker and Pandas, both listed as required skills. While the résumé does not mention scikit‑learn, PyTorch, or Python, the strong experience level and overlap on Docker and Pandas make the candidate a partial match for the role."
+      }
+    ],
+    "job_009": [
+      {
+        "candidate_id": "cand_019",
+        "rationale": "The candidate has four years of experience, meeting the minimum required experience for the role. Their skill set includes Docker, scikit-learn, and Pandas, which directly align with three of the required technologies for the position. This overlap demonstrates a solid foundation for the ML Engineer responsibilities."
+      },
+      {
+        "candidate_id": "cand_013",
+        "rationale": "The candidate’s five years of experience exceeds the four‑year minimum and aligns with the role’s experience requirement. They also possess Docker, PyTorch, and Pandas, which are three of the five required technologies for the position."
+      },
+      {
+        "candidate_id": "cand_004",
+        "rationale": "The candidate’s 7 years of experience exceeds the 4‑year minimum and they demonstrate strong proficiency with PyTorch, Pandas, and scikit‑learn, which align directly with the role’s core technical stack. However, the candidate does not list Docker or SQL experience, and they are based in Munich rather than Lisbon."
+      },
+      {
+        "candidate_id": "cand_026",
+        "rationale": "The candidate brings 12 years of experience, well above the required four, and has hands‑on expertise with Docker and Pandas, which match two of the required tools. However, the résumé does not list PyTorch, SQL, or scikit‑learn, and the candidate is based in Dublin while the role is located in Lisbon."
+      },
+      {
+        "candidate_id": "cand_032",
+        "rationale": "The candidate’s nine years of experience comfortably exceeds the four‑year minimum and they have hands‑on expertise with Docker, SQL, and Pandas, which align directly with the role’s core requirements. While the candidate does not list PyTorch or scikit‑learn, their strong background in the overlapping tools makes them a solid technical fit for the position."
+      }
+    ],
+    "job_010": [
+      {
+        "candidate_id": "cand_040",
+        "rationale": "The candidate has 8 years of experience, surpassing the 6‑year minimum, and explicitly lists both REST APIs and RAG, matching two of the three required skills. However, Python is not mentioned among the candidate’s skills, so that requirement is not demonstrated. Overall, the candidate aligns well on experience and two key technologies but lacks evidence of Python proficiency."
+      },
+      {
+        "candidate_id": "cand_021",
+        "rationale": "The candidate has 8 years of experience, surpassing the 6‑year minimum required for the role. They also possess explicit experience with REST APIs, which aligns with one of the core technical requirements. However, the candidate’s profile does not list Python or RAG, which are also required for the position."
+      },
+      {
+        "candidate_id": "cand_015",
+        "rationale": "The candidate demonstrates strong alignment with the role by possessing both RAG and REST APIs expertise, directly matching two of the three required skills. With nine years of relevant experience, they comfortably exceed the six‑year minimum stipulated for the position."
+      },
+      {
+        "candidate_id": "cand_010",
+        "rationale": "The candidate shares the required RAG expertise with the role, but does not list REST APIs or Python, and has only three years of experience versus the six‑year minimum. Additionally, the candidate is based in Frankfurt while the position is in Munich, indicating a location mismatch."
+      },
+      {
+        "candidate_id": "cand_039",
+        "rationale": "The candidate has six years of experience, meeting the job’s minimum requirement, and possesses expertise in REST APIs, which aligns with one of the core skills listed. However, the résumé does not reference Python or RAG, the other required competencies."
+      }
+    ],
+    "job_011": [
+      {
+        "candidate_id": "cand_040",
+        "rationale": "The candidate matches the required LangChain, Git, and REST API skills and is based in Frankfurt, aligning perfectly with the job’s location. With eight years of relevant experience, they far exceed the minimum one‑year requirement, making them a strong fit for the role."
+      },
+      {
+        "candidate_id": "cand_010",
+        "rationale": "The candidate is based in Frankfurt and brings three years of AI Automation engineering experience, surpassing the one‑year minimum. They also list LangChain among their skills, directly matching a required technology for the role."
+      },
+      {
+        "candidate_id": "cand_021",
+        "rationale": "The candidate’s profile lists LangChain and REST APIs, which directly match two of the required skills for the AI Automation Engineer role, and they bring eight years of relevant experience—well above the one‑year minimum. While the candidate does not list Git or Python, the overlap in key technologies and the extensive experience make them a strong fit for the position."
+      },
+      {
+        "candidate_id": "cand_039",
+        "rationale": "The candidate possesses the required LangChain, Git, and REST API expertise and brings six years of AI automation experience, well above the one‑year minimum. While the role is based in Frankfurt and the candidate is located in Zurich, the skill and experience match is strong."
+      },
+      {
+        "candidate_id": "cand_015",
+        "rationale": "The candidate’s nine years of experience comfortably exceed the one‑year minimum required for the role. They have direct experience with both LangChain and REST APIs, which are core requirements for the position. This strong alignment of experience and key technical skills makes them a solid match for the AI Automation Engineer role."
+      }
+    ],
+    "job_012": [
+      {
+        "candidate_id": "cand_018",
+        "rationale": "The candidate possesses Docker, Linux and Kubernetes expertise and is located in Dublin, directly matching the job’s required skill set and location. However, with six years of experience, the candidate falls short of the seven‑year minimum specified."
+      },
+      {
+        "candidate_id": "cand_011",
+        "rationale": "The candidate is based in Dublin and brings 9 years of cloud engineering experience, surpassing the 7‑year minimum. They also have hands‑on experience with Docker and Linux, which align directly with the role’s core requirements."
+      },
+      {
+        "candidate_id": "cand_006",
+        "rationale": "The candidate matches the job’s required Linux and Kubernetes skills, but does not list Docker. They have 5 years of experience, which is below the 7‑year minimum, and they are based in Munich rather than Dublin. Consequently, the fit is partial on technical skills but falls short on experience and location."
+      },
+      {
+        "candidate_id": "cand_033",
+        "rationale": "The candidate shares the required Linux skill with the job, but does not list Docker or Kubernetes. They have only three years of experience, which is below the seven‑year minimum, and they are based in Amsterdam rather than Dublin. Consequently, the overall match is limited."
+      },
+      {
+        "candidate_id": "cand_016",
+        "rationale": "The candidate matches the role on Docker, but they have only 4 years of experience compared with the 7 years required and are based in Barcelona rather than Dublin. They also do not list Linux or Kubernetes, which are essential skills for the position."
+      }
+    ],
+    "job_013": [
+      {
+        "candidate_id": "cand_030",
+        "rationale": "The candidate possesses all three required skills—REST APIs, Git, and JavaScript—and brings 11 years of relevant experience, far exceeding the minimum two‑year requirement. Their extensive background aligns directly with the technical profile sought for the Frontend Engineer role."
+      },
+      {
+        "candidate_id": "cand_029",
+        "rationale": "The candidate possesses all three required skills—REST APIs, Git, and JavaScript—and brings nine years of relevant experience, well above the two‑year minimum. Their background as a Frontend Engineer aligns directly with the role’s technical expectations."
+      },
+      {
+        "candidate_id": "cand_025",
+        "rationale": "The candidate has 7 years of experience, comfortably exceeding the 2‑year minimum required. They also list REST APIs, which directly matches one of the required skills for the role."
+      },
+      {
+        "candidate_id": "cand_012",
+        "rationale": "The candidate is based in Zurich and brings 7 years of experience, exceeding the 2‑year minimum required. They have demonstrated proficiency with Git, which aligns with one of the required skills for the role."
+      },
+      {
+        "candidate_id": "cand_009",
+        "rationale": "The candidate has 2 years of experience, meeting the minimum required experience, and possesses both REST APIs and JavaScript skills that are listed in the job description. While the candidate’s location is Frankfurt, the core technical qualifications align with the Frontend Engineer role."
+      }
+    ],
+    "job_014": [
+      {
+        "candidate_id": "cand_025",
+        "rationale": "The candidate possesses HTML, CSS, and TypeScript, which align with three of the required skills. However, they have only 7 years of experience, missing the 8‑year minimum, and do not list JavaScript, Git, or a Hamburg location, which are also required."
+      },
+      {
+        "candidate_id": "cand_003",
+        "rationale": "The candidate shares the required HTML, CSS, and Git skills and is based in Hamburg, aligning with the job’s location requirement. However, they have only one year of experience and do not list JavaScript or TypeScript, falling short of the eight‑year experience minimum and key technical requirements."
+      },
+      {
+        "candidate_id": "cand_029",
+        "rationale": "The candidate offers 9 years of frontend experience, exceeding the 8‑year minimum required. They have proven expertise with HTML, JavaScript, and Git, directly matching core technologies listed for the position."
+      },
+      {
+        "candidate_id": "cand_030",
+        "rationale": "The candidate possesses the required JavaScript, TypeScript, and Git skills and brings 11 years of experience, surpassing the 8‑year minimum. While HTML and CSS are not listed in the candidate’s profile, the matched technical competencies and extensive experience make them a strong fit for the Frontend Engineer role."
+      },
+      {
+        "candidate_id": "cand_037",
+        "rationale": "The candidate shares the required Git proficiency and is based in Hamburg, matching the location and one of the listed tools. However, they lack the required frontend skills (HTML, CSS, JavaScript, TypeScript) and have only 7 years of experience, falling short of the 8‑year minimum. Consequently, the overall fit for this Frontend Engineer role is limited."
+      }
+    ],
+    "job_015": [
+      {
+        "candidate_id": "cand_015",
+        "rationale": "The candidate has 9 years of experience, exceeding the 7‑year minimum, and is based in Lisbon, matching the location requirement. They possess FastAPI, RAG, and REST APIs, which align directly with three of the required skills for the role. This strong overlap in experience, location, and key technologies makes them a solid match."
+      },
+      {
+        "candidate_id": "cand_035",
+        "rationale": "The candidate has 7 years of experience, meeting the minimum requirement, and possesses FastAPI, Git, RAG, and LLM APIs, which are all listed in the job description. These overlapping skills align directly with the core technical requirements for the AI Automation Engineer role."
+      },
+      {
+        "candidate_id": "cand_021",
+        "rationale": "The candidate possesses FastAPI, LLM APIs and REST APIs, which align directly with the role’s required technologies. With eight years of experience, they exceed the minimum seven‑year requirement. Their background as an AI Automation Engineer matches the job title."
+      },
+      {
+        "candidate_id": "cand_040",
+        "rationale": "The candidate brings 8 years of experience, exceeding the 7‑year minimum, and possesses core skills that align with the role, including Git, RAG, and REST APIs. While the résumé does not list FastAPI or LLM API experience, the overlapping competencies and seniority make the candidate a strong fit for the AI Automation Engineer position."
+      },
+      {
+        "candidate_id": "cand_010",
+        "rationale": "The candidate’s background includes FastAPI, RAG, and LLM APIs, which directly align with key requirements of the role. However, they have only three years of experience—well below the seven‑year minimum—and are located in Frankfurt rather than Lisbon, while also missing the required Git and REST API experience. Consequently, the overall fit is limited."
+      }
+    ],
+    "job_016": [
+      {
+        "candidate_id": "cand_030",
+        "rationale": "The candidate’s profile includes Git, REST APIs, React, and JavaScript, which align directly with the core technical requirements of the role. With 11 years of relevant experience, they comfortably exceed the minimum five‑year threshold. This strong skill and experience match makes them a solid fit for the Frontend Engineer position."
+      },
+      {
+        "candidate_id": "cand_029",
+        "rationale": "The candidate demonstrates strong alignment with the role through proven experience with Git, REST APIs, and JavaScript, all of which are core requirements for the Frontend Engineer position. With nine years of relevant experience, they comfortably exceed the minimum five‑year threshold specified for the role."
+      },
+      {
+        "candidate_id": "cand_025",
+        "rationale": "The candidate’s 7 years of experience exceeds the 5‑year minimum and they demonstrate solid expertise with both CSS and REST APIs, which are required for the role. However, their skill set does not list Git, React, or JavaScript, which are also essential for the position. Consequently, the match is partial, covering key experience and two core technologies but missing several required competencies."
+      },
+      {
+        "candidate_id": "cand_023",
+        "rationale": "The candidate shares Git experience with the role, but does not list CSS, REST APIs, React, or JavaScript, which are required skills. Additionally, the candidate has only three years of experience versus the five‑year minimum and is based in Zurich rather than Lisbon. Consequently, the match is weak."
+      },
+      {
+        "candidate_id": "cand_037",
+        "rationale": "The candidate demonstrates solid experience with Git and REST APIs, both listed as required skills for the Frontend Engineer role, and brings 7 years of overall experience, exceeding the minimum 5‑year threshold. While the candidate’s background is focused on backend technologies, the overlap in Git, REST API work, and sufficient experience aligns with the core qualifications outlined in the job description."
+      }
+    ],
+    "job_017": [
+      {
+        "candidate_id": "cand_040",
+        "rationale": "The candidate is based in Frankfurt and brings 8 years of experience, exceeding the 5‑year minimum. They also possess RAG expertise, which aligns with one of the core required skills."
+      },
+      {
+        "candidate_id": "cand_010",
+        "rationale": "The candidate matches the required RAG and LLM APIs skills and is located in Frankfurt, but they have only 3 years of experience, which is below the 5‑year minimum. Additionally, Python is not listed among their skills."
+      },
+      {
+        "candidate_id": "cand_021",
+        "rationale": "The candidate has 8 years of experience, exceeding the 5‑year minimum, and lists LLM APIs among their core skills, which aligns with the job’s required expertise. However, the candidate’s location is Zurich, while the position is based in Frankfurt, and they do not list RAG or Python, which are also required."
+      },
+      {
+        "candidate_id": "cand_015",
+        "rationale": "The candidate’s profile includes extensive experience with RAG and a total of nine years in AI automation, comfortably surpassing the five‑year minimum required for the role. While the job also calls for LLM API and Python expertise, the candidate’s strong RAG background aligns directly with a core requirement."
+      },
+      {
+        "candidate_id": "cand_035",
+        "rationale": "The candidate brings 7 years of experience and has worked with both RAG and LLM APIs, meeting and exceeding the required 5‑year threshold and core technical skills. The only discrepancy is location, as the candidate is based in Amsterdam while the role is in Frankfurt."
+      }
+    ],
+    "job_018": [
+      {
+        "candidate_id": "cand_038",
+        "rationale": "The candidate is based in Zurich and brings 9 years of data engineering experience, comfortably exceeding the 4‑year minimum. They possess the required Python, SQL, and Docker skills listed in the job description. While PostgreSQL is not mentioned, the overlap in core technologies and location makes them a strong match."
+      },
+      {
+        "candidate_id": "cand_005",
+        "rationale": "The candidate brings 9 years of data engineering experience, comfortably exceeding the 4‑year minimum. Their skill set includes PostgreSQL and Python, which directly match two of the required technologies."
+      },
+      {
+        "candidate_id": "cand_023",
+        "rationale": "The candidate matches three of the four required technical skills—Python, PostgreSQL, and Docker—and is also based in Zurich, aligning with the job’s location. However, the candidate does not list SQL experience and has only three years of relevant experience, which is below the four‑year minimum stated in the posting."
+      },
+      {
+        "candidate_id": "cand_022",
+        "rationale": "The candidate’s 11 years of experience comfortably exceeds the job’s minimum of four years, and they possess the required Python, PostgreSQL, and Docker skills. While the job also lists SQL, the candidate’s profile does not explicitly mention it, but the other required competencies align well with the role."
+      },
+      {
+        "candidate_id": "cand_012",
+        "rationale": "The candidate’s 7 years of experience exceeds the 4‑year minimum and they are based in Zurich, matching the location requirement. They possess Python and SQL, which align with two of the required skills for the Data Engineer role."
+      }
+    ],
+    "job_019": [
+      {
+        "candidate_id": "cand_025",
+        "rationale": "The candidate demonstrates relevant expertise in TypeScript, CSS, and HTML, which aligns with core frontend requirements. However, they lack experience with JavaScript and Git, have only seven years of experience versus the eight‑year minimum, and are based in Berlin rather than Zurich. Consequently, the overall fit is limited despite some skill overlap."
+      },
+      {
+        "candidate_id": "cand_030",
+        "rationale": "The candidate has 11 years of experience, surpassing the 8‑year minimum required for the role. They possess the required TypeScript, JavaScript, and Git skills explicitly listed in the job description. Their background aligns well with the core technical requirements for the Frontend Engineer position."
+      },
+      {
+        "candidate_id": "cand_029",
+        "rationale": "The candidate has 9 years of experience, exceeding the 8‑year minimum. Their skill set includes HTML, JavaScript, and Git, which are all listed among the required competencies for the role."
+      },
+      {
+        "candidate_id": "cand_027",
+        "rationale": "The candidate’s 10 years of frontend experience exceeds the 8‑year minimum and aligns with the required expertise in TypeScript, JavaScript, and HTML. Their skill set directly matches three of the five listed technologies, demonstrating strong relevance for the Frontend Engineer role."
+      },
+      {
+        "candidate_id": "cand_023",
+        "rationale": "The candidate shares experience with HTML and Git, which are listed among the required skills. However, they do not have the required TypeScript, JavaScript, or CSS experience and only have three years of overall experience, falling short of the eight‑year minimum. Consequently, the match is limited to the overlapping tools and does not satisfy the full job requirements."
+      }
+    ],
+    "job_020": [
+      {
+        "candidate_id": "cand_025",
+        "rationale": "The candidate matches the job on CSS, HTML, and being based in Berlin, but does not list JavaScript or Git experience and has only seven years of experience, which is below the eight‑year minimum. Consequently, the fit is partial rather than a full match."
+      },
+      {
+        "candidate_id": "cand_002",
+        "rationale": "The candidate is located in Berlin and brings 10 years of experience, surpassing the 8‑year minimum. They have HTML and Git, which align with two of the required skills. However, they do not list CSS or JavaScript, so those required technologies are missing."
+      },
+      {
+        "candidate_id": "cand_029",
+        "rationale": "The candidate possesses HTML, JavaScript, and Git, which align with the core technical requirements, and brings 9 years of experience, exceeding the 8‑year minimum. While CSS is not listed among the candidate’s skills, the strong match on the other required technologies and seniority makes them a solid fit for the role."
+      },
+      {
+        "candidate_id": "cand_003",
+        "rationale": "The candidate shares three of the required technical skills—CSS, HTML, and Git—with the Frontend Engineer role. However, they do not list JavaScript, have only one year of experience versus the eight years required, and are based in Hamburg rather than Berlin. Consequently, while there is partial skill alignment, the candidate falls short on key experience, a required technology, and location."
+      },
+      {
+        "candidate_id": "cand_030",
+        "rationale": "The candidate brings 11 years of experience, comfortably surpassing the 8‑year minimum required. Their skill set includes both JavaScript and Git, which directly match the job’s required technologies."
+      }
+    ],
+    "job_021": [
+      {
+        "candidate_id": "cand_031",
+        "rationale": "The candidate is based in Frankfurt and has 9 years of experience, exceeding the 8‑year minimum. They possess Docker and Airflow, both of which are required skills for the role. This alignment makes them a strong match for the Data Engineer position."
+      },
+      {
+        "candidate_id": "cand_024",
+        "rationale": "The candidate matches the core technical requirements, possessing Docker, Airflow, and SQL expertise. With nine years of data engineering experience, they exceed the eight‑year minimum."
+      },
+      {
+        "candidate_id": "cand_026",
+        "rationale": "The candidate’s 12 years of data engineering experience exceeds the 8‑year minimum and aligns with the role’s requirement for extensive experience. They also list Docker and Airflow, which match two of the core tools specified for the position. While the candidate does not mention PostgreSQL or SQL, their strong background with Docker and Airflow makes them a solid fit for the primary technical needs."
+      },
+      {
+        "candidate_id": "cand_034",
+        "rationale": "The candidate shares relevant experience with PostgreSQL and SQL and is based in Frankfurt, aligning with the job’s location and core database skills. However, they do not list Docker or Airflow and have only six years of experience, falling short of the eight‑year minimum. Consequently, the match is partial but does not meet all required criteria."
+      },
+      {
+        "candidate_id": "cand_032",
+        "rationale": "The candidate matches the required Docker and SQL skills and exceeds the minimum eight years of experience with nine years in data engineering. However, they do not list Airflow or PostgreSQL, and their location is Warsaw rather than Frankfurt."
+      }
+    ],
+    "job_022": [
+      {
+        "candidate_id": "cand_013",
+        "rationale": "The candidate demonstrates strong alignment with the role’s core technical requirements, possessing hands‑on experience with Python, Docker, and PyTorch. However, the profile does not list SQL, falls short of the seven‑year experience minimum, and is based in Prague rather than Warsaw."
+      },
+      {
+        "candidate_id": "cand_019",
+        "rationale": "The candidate demonstrates experience with Python and Docker, which aligns with two of the required skills, but does not list SQL or PyTorch. Additionally, the candidate has only four years of experience versus the seven‑year minimum and is based in Barcelona rather than Warsaw. Consequently, the overall fit for this ML Engineer role is limited."
+      },
+      {
+        "candidate_id": "cand_032",
+        "rationale": "The candidate’s 9 years of experience with Python, SQL, and Docker exceeds the 7‑year minimum and aligns with the core technical requirements. Their location in Warsaw also matches the position’s site. While they lack explicit PyTorch experience, they meet the other mandatory skills."
+      },
+      {
+        "candidate_id": "cand_008",
+        "rationale": "The candidate brings 11 years of experience, comfortably surpassing the 7‑year minimum required for the role. They possess Python expertise, which directly matches one of the core technical requirements. Additionally, both the candidate and the position are based in Warsaw, aligning on location."
+      },
+      {
+        "candidate_id": "cand_001",
+        "rationale": "The candidate has 11 years of experience, surpassing the 7‑year minimum, and is based in Warsaw, matching the job’s location requirement. Their skill set includes Python, which aligns with the role’s required expertise."
+      }
+    ],
+    "job_023": [
+      {
+        "candidate_id": "cand_019",
+        "rationale": "The candidate possesses the required Python, Docker, and Pandas expertise listed for the role. However, with only 4 years of experience, they fall short of the 7‑year minimum specified in the job description."
+      },
+      {
+        "candidate_id": "cand_013",
+        "rationale": "The candidate demonstrates the required technical stack, listing Docker, Pandas, and Python among their core skills. However, they have only five years of experience, which falls short of the seven‑year minimum, and they are based in Prague rather than Barcelona. Consequently, while the skill match is strong, the experience level and location do not meet the job’s stated requirements."
+      },
+      {
+        "candidate_id": "cand_026",
+        "rationale": "The candidate brings 12 years of experience, well above the 7‑year minimum, and has proven expertise with Docker and Pandas, both of which are required for the role. This strong background in the listed tools makes the candidate a solid technical fit for the position."
+      },
+      {
+        "candidate_id": "cand_004",
+        "rationale": "The candidate has 7 years of experience and demonstrates strong proficiency with Pandas and Python, matching two of the three required technical skills. However, the candidate does not list Docker experience and is based in Munich rather than Barcelona, which diverges from the location and one skill requirement."
+      },
+      {
+        "candidate_id": "cand_031",
+        "rationale": "The candidate brings 9 years of experience, exceeding the 7‑year minimum, and is proficient in both Docker and Python, which align with the core requirements. However, the candidate’s skill set does not list Pandas, a required competency for the role."
+      }
+    ],
+    "job_024": [
+      {
+        "candidate_id": "cand_021",
+        "rationale": "The candidate has 8 years of experience, far exceeding the 3‑year minimum required. They list both REST APIs and LLM APIs, directly matching the core technical requirements. However, the candidate is based in Zurich while the role is located in Dublin."
+      },
+      {
+        "candidate_id": "cand_040",
+        "rationale": "The candidate brings 8 years of experience, well above the 3‑year minimum, and has proven work with REST APIs, which aligns with one of the core requirements. However, the candidate’s listed skills do not include Python or LLM APIs, so the match is partial."
+      },
+      {
+        "candidate_id": "cand_035",
+        "rationale": "The candidate brings 7 years of experience, comfortably exceeding the 3‑year minimum required for the role. They have explicit experience with LLM APIs, which aligns directly with one of the core job requirements. However, the candidate’s profile does not list Python or REST API experience, which are also specified in the job description."
+      },
+      {
+        "candidate_id": "cand_015",
+        "rationale": "The candidate brings nine years of experience and a strong background in building REST APIs, which satisfies the job’s required experience level and one of its core technical skills. While the résumé does not list Python or LLM‑API experience, the extensive REST‑API expertise aligns well with the role’s primary focus."
+      },
+      {
+        "candidate_id": "cand_039",
+        "rationale": "The candidate demonstrates strong alignment with the role through solid experience building REST APIs, a core requirement of the position. With six years of relevant experience, they exceed the three‑year minimum stipulated for the AI Automation Engineer role."
+      }
+    ],
+    "job_025": [
+      {
+        "candidate_id": "cand_023",
+        "rationale": "The candidate shares three of the required tools—Docker, PostgreSQL, and Git—with the Backend Engineer role, demonstrating relevant hands‑on experience. However, the candidate does not list FastAPI and has only three years of experience, which falls short of the six‑year minimum stated in the job description."
+      },
+      {
+        "candidate_id": "cand_014",
+        "rationale": "The candidate’s background includes PostgreSQL, Docker, and FastAPI, matching the core technologies required for the role. However, with only 3 years of experience, the candidate does not meet the 6‑year minimum stipulated in the job description."
+      },
+      {
+        "candidate_id": "cand_036",
+        "rationale": "The candidate has 7 years of backend engineering experience, exceeding the 6‑year minimum, and explicitly lists PostgreSQL, FastAPI, and Git, which align with three of the four required skills. While Docker is not mentioned in the candidate’s profile, the strong match on the other core technologies and the required experience level makes them a solid fit for the role."
+      },
+      {
+        "candidate_id": "cand_022",
+        "rationale": "The candidate has Docker and PostgreSQL experience and brings 11 years of backend engineering work, exceeding the job’s minimum of 6 years. This aligns with the core technical requirements listed for the role."
+      },
+      {
+        "candidate_id": "cand_007",
+        "rationale": "The candidate possesses all four required technical skills—Docker, PostgreSQL, FastAPI, and Git—demonstrating direct relevance to the role. However, they have 5 years of experience, which is one year below the 6‑year minimum stated in the job. Additionally, the candidate is based in Warsaw while the position is located in Vienna."
+      }
+    ]
+  }
+}

@@ -12,9 +12,30 @@ from functools import lru_cache
 
 from dotenv import load_dotenv
 
+DEFAULT_CORS_ORIGINS = "http://localhost:5173,http://127.0.0.1:5173"
+
 
 class ConfigError(RuntimeError):
     """Raised when required environment variables are missing or invalid."""
+
+
+def parse_origins(raw: str) -> list[str]:
+    """Split a comma-separated origin list, discarding blank entries."""
+    return [origin.strip() for origin in raw.split(",") if origin.strip()]
+
+
+@lru_cache(maxsize=1)
+def get_cors_origins() -> list[str]:
+    """Return the browser origins allowed to call the API.
+
+    Resolved separately from get_settings so that importing the FastAPI app
+    never depends on Pinecone or Groq credentials being present, which would
+    otherwise make the app unimportable for local frontend work and would
+    break the ability to read the OpenAPI schema.
+    """
+    load_dotenv()
+    return parse_origins(os.getenv("CORS_ORIGINS", DEFAULT_CORS_ORIGINS))
+
 
 
 @dataclass(frozen=True)

@@ -17,10 +17,13 @@ from sentence_transformers import SentenceTransformer
 
 from src.config import get_settings
 from src.data import load_candidates, load_jobs
-from src.schemas import Candidate, Job
+from src.schemas import (
+    CANDIDATE_NAMESPACE,
+    JOB_NAMESPACE,
+    Candidate,
+    Job,
+)
 
-CANDIDATE_NAMESPACE = "candidates"
-JOB_NAMESPACE = "jobs"
 SERVERLESS_CLOUD = "aws"
 SERVERLESS_REGION = "us-east-1"
 INDEX_READY_TIMEOUT_SECONDS = 120.0

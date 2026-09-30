@@ -1,24 +1,32 @@
 """Retrieval and grounded generation for job to candidate matching.
 
-Pipeline per TRD.md: embed the job summary with sentence-transformers,
-query the Pinecone "candidates" namespace for top-k vector similarity,
-then ask Groq for a short rationale per candidate, grounded strictly in
-the retrieved candidate metadata.
+Pipeline per TRD.md: look up the job's stored vector in the Pinecone "jobs"
+namespace, query the "candidates" namespace for top-k vector similarity, then
+ask Groq for a short rationale per candidate, grounded strictly in the
+retrieved candidate metadata.
+
+The embedding model is deliberately not imported here. Loading
+sentence-transformers costs roughly 414 MB of resident memory, which does not
+fit the 512 MB free deployment tier, and job vectors are already stored by
+src/ingest.py. See DECISIONS.md D13.
 """
 
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
-from functools import lru_cache
 from typing import Any
 
 from openai import OpenAI
-from pinecone import Pinecone
-from sentence_transformers import SentenceTransformer
+from pinecone import Index, Pinecone
 
 from src.config import Settings, get_settings
-from src.ingest import CANDIDATE_NAMESPACE
-from src.schemas import Job, MatchResponse, MatchResult
+from src.schemas import (
+    CANDIDATE_NAMESPACE,
+    JOB_NAMESPACE,
+    Job,
+    MatchResponse,
+    MatchResult,
+)
 
 GROQ_BASE_URL = "https://api.groq.com/openai/v1"
 
@@ -31,10 +39,21 @@ SYSTEM_PROMPT = (
 )
 
 
-@lru_cache(maxsize=1)
-def load_embedding_model(model_name: str) -> SentenceTransformer:
-    """Load and cache a sentence-transformers model by name."""
-    return SentenceTransformer(model_name)
+def job_vector(index: Index, job_id: str) -> list[float]:
+    """Return the stored embedding for one job from the "jobs" namespace.
+
+    The vector was produced by the same model at ingest time, so retrieving it
+    yields the same query vector an in-process encode would have produced.
+    """
+    response = index.fetch(ids=[job_id], namespace=JOB_NAMESPACE)
+    vectors = response.vectors or {}
+    vector = vectors.get(job_id)
+    if vector is None or not vector.values:
+        raise KeyError(
+            f"No stored vector for job {job_id!r} in namespace {JOB_NAMESPACE!r}; "
+            "run: python -m src.ingest"
+        )
+    return list(vector.values)
 
 
 def job_context(job: Job) -> str:
@@ -110,12 +129,10 @@ def match_job(job: Job, top_k: int | None = None) -> MatchResponse:
     """
     settings = get_settings()
     k = top_k if top_k is not None else settings.top_k
-    model = load_embedding_model(settings.embedding_model)
-    query_vector = model.encode(job.summary).tolist()
     pc = Pinecone(api_key=settings.pinecone_api_key)
     index = pc.Index(settings.pinecone_index_name)
     query_result = index.query(
-        vector=query_vector,
+        vector=job_vector(index, job.id),
         top_k=k,
         namespace=CANDIDATE_NAMESPACE,
         include_metadata=True,

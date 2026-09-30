@@ -20,9 +20,8 @@ from pinecone import Pinecone
 
 from src.config import get_settings
 from src.data import load_candidates, load_jobs
-from src.ingest import CANDIDATE_NAMESPACE
-from src.match import load_embedding_model
-from src.schemas import Candidate, Job
+from src.match import job_vector
+from src.schemas import CANDIDATE_NAMESPACE, Candidate, Job
 
 TOP_K = 5
 MIN_SHARED_SKILLS = 2
@@ -42,7 +41,6 @@ def baseline_ids(job: Job, candidates: Sequence[Candidate]) -> set[str]:
 def main() -> None:
     """Evaluate retrieval for every job and write the JSON report."""
     settings = get_settings()
-    model = load_embedding_model(settings.embedding_model)
     pc = Pinecone(api_key=settings.pinecone_api_key)
     index = pc.Index(settings.pinecone_index_name)
     candidates = load_candidates()
@@ -52,7 +50,7 @@ def main() -> None:
     for job in jobs:
         baseline = baseline_ids(job, candidates)
         result = index.query(
-            vector=model.encode(job.summary).tolist(),
+            vector=job_vector(index, job.id),
             top_k=TOP_K,
             namespace=CANDIDATE_NAMESPACE,
             include_metadata=False,

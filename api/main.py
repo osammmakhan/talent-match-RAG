@@ -7,13 +7,22 @@ POST /match/{job_id}?top_k=5.
 from __future__ import annotations
 
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 
-from src.config import ConfigError
+from src.config import ConfigError, get_cors_origins
 from src.data import get_job, load_candidates, load_jobs
 from src.match import match_job
 from src.schemas import Candidate, Job, MatchResponse
 
 app = FastAPI(title="Talent Match RAG")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=get_cors_origins(),
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type"],
+)
 
 
 @app.get("/health")

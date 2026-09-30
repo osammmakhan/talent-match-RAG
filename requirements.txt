@@ -1,19 +1,33 @@
-fastapi
-uvicorn[standard]
-pydantic
-python-dotenv
-sentence-transformers
-pinecone
-openai
+# Dependencies are pinned to exact versions, deliberately (DECISIONS.md D11).
+# Unpinned requirements allowed an upstream fastapi/starlette breaking change
+# to break the app on a plain reinstall; these versions are verified working.
+
+# backend
+fastapi==0.142.2
+# Pinned below 1.0 on purpose: fastapi 0.142.2 declares starlette>=0.46.0 with
+# no upper bound, and starlette 1.0 removed the on_startup/on_shutdown kwargs
+# from Router.__init__, which fastapi still passes. See DECISIONS.md D11.
+starlette==0.52.1
+uvicorn[standard]==0.30.6
+pydantic==2.13.5
+python-dotenv==1.0.1
+
+# pipeline
+sentence-transformers==6.1.0
+pinecone==10.0.0
+openai==1.42.0
+
+# test client used for local smoke tests only
+httpx==0.27.2
 
 # eval_generation.py also needs the OpenAI Evals framework, installed
 # separately so pip does not resolve its full dependency tree (D10):
 #   pip install --no-deps git+https://github.com/openai/evals.git
 # plus the packages its import path actually requires:
-blobfile
-dacite
-beartype
-backoff
-lz4
-tiktoken
-zstandard
+blobfile==3.3.0
+dacite==1.9.2
+beartype==0.22.9
+backoff==2.2.1
+lz4==4.4.5
+tiktoken==0.14.0
+zstandard==0.25.0

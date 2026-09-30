@@ -4,6 +4,9 @@ from __future__ import annotations
 
 from pydantic import BaseModel
 
+CANDIDATE_NAMESPACE = "candidates"
+JOB_NAMESPACE = "jobs"
+
 
 class Candidate(BaseModel):
     """A synthetic candidate profile from data/candidates.json."""

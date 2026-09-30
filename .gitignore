@@ -7,11 +7,20 @@
 BACKEND_SCHEMA.md
 PRD.md
 TRD.md
+PRODUCT.md
 
 # local design docs, not for the public repo
 PRD.md
 TRD.md
 BACKEND_SCHEMA.md
+PRODUCT.md
+
+# impeccable working artifacts (mocks, builds, review captures)
+.impeccable/
+
+# local diagnostics: Windows-only, a dev tool not part of the deployed app.
+# Its findings are recorded in DECISIONS.md D13.
+measure_memory.py
 
 # Python
 __pycache__/

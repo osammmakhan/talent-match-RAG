@@ -45,18 +45,36 @@ item done until it has been verified running, not just written.
 
 ## Phase 3 — Frontend
 
+- [x] Backend CORS allowlist so a browser frontend can call the API
+      (env-driven via `CORS_ORIGINS`, DECISIONS.md D12)
 - [ ] Scaffold React + TypeScript app
 - [ ] Job picker (dropdown, populated from `/jobs`)
 - [ ] "Find Matches" action calling `/match/{job_id}`
 - [ ] Result cards: candidate id, similarity score, rationale
-- [ ] Apply UI/UX direction per DECISIONS.md D8 (pending resolution before
-      this phase starts)
+- [ ] Distinguish "searching" from "server waking up" in the loading state.
+      Render's free tier sleeps after 15 minutes idle and takes about a minute
+      to wake, so a plain spinner on a blank panel reads as a broken page.
+      Copy must stay honest about which of the two is happening, and the
+      request needs a client-side timeout (NFR3)
+- [ ] Loading, empty, and error states (404, 500, and offline)
+- [ ] Apply UI/UX direction per DECISIONS.md D8 (`emil-design-eng` for craft,
+      `impeccable` for structure and audit; D8 to be closed in DECISIONS.md)
 
 ## Phase 4 — Deployment
 
+- [x] Confirm the app fits Render's free 512 MB tier: measured 73.7 MB on the
+      request path after DECISIONS.md D13 removed the in-process embedding
+      call; `python measure_memory.py` guards against regression
+- [x] Confirm the embedding model is not needed at request time, so the
+      ephemeral-filesystem model re-download problem no longer applies to the
+      API (it applies only if ingest is ever run on Render)
 - [ ] Deploy backend to Render (free web service tier)
 - [ ] Deploy frontend to Render static site or Cloudflare Pages
+- [ ] Set `CORS_ORIGINS` on the backend to the deployed frontend origin
 - [ ] Point frontend at deployed backend URL
+- [ ] Handle Render cold starts in the UI (free tier sleeps after 15 minutes
+      idle, roughly one minute to wake), since NFR3 will otherwise appear to
+      fail on the first request after idle
 - [ ] Final smoke test against live URLs
 - [ ] Confirm live link works from a fresh browser session with no local
       setup

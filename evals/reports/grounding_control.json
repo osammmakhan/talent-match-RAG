@@ -1,0 +1,41 @@
+{
+  "method": "negative_control_on_groundedness_grader",
+  "candidate_id": "cand_004",
+  "job_id": "job_001",
+  "model": "openai/gpt-oss-120b",
+  "honest_control_passed": true,
+  "injected_violations": 3,
+  "violations_caught": 3,
+  "detection_rate": 1.0,
+  "grader_is_discriminating": true,
+  "results": [
+    {
+      "case": "control",
+      "kind": "honest",
+      "injected_skill": null,
+      "passed": true,
+      "grader_claim": null
+    },
+    {
+      "case": "injected:Kubernetes",
+      "kind": "tampered",
+      "injected_skill": "Kubernetes",
+      "passed": false,
+      "grader_claim": "\"They also have production experience with Kubernetes, which strengthens the match considerably.\""
+    },
+    {
+      "case": "injected:TensorFlow",
+      "kind": "tampered",
+      "injected_skill": "TensorFlow",
+      "passed": false,
+      "grader_claim": "\"They also have production experience with TensorFlow, which strengthens the match considerably.\""
+    },
+    {
+      "case": "injected:GraphQL",
+      "kind": "tampered",
+      "injected_skill": "GraphQL",
+      "passed": false,
+      "grader_claim": "\"They also have production experience with GraphQL, which strengthens the match considerably.\""
+    }
+  ]
+}

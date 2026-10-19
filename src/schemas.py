@@ -1,4 +1,4 @@
-"""Pydantic models for source data and API responses, per BACKEND_SCHEMA.md."""
+"""Pydantic models for source data and API responses, per docs/BACKEND_SCHEMA.md."""
 
 from __future__ import annotations
 
@@ -31,11 +31,16 @@ class Job(BaseModel):
 
 
 class MatchResult(BaseModel):
-    """One retrieved candidate with similarity score and generated rationale."""
+    """One retrieved candidate with similarity score and generated rationale.
+
+    rationale is None when retrieval succeeded but generation failed, which is
+    reported separately rather than discarding a valid similarity score. See
+    DECISIONS.md D16.
+    """
 
     candidate_id: str
     similarity_score: float
-    rationale: str
+    rationale: str | None
 
 
 class MatchResponse(BaseModel):

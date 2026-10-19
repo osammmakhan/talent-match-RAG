@@ -1,20 +1,25 @@
 """Retrieval evaluation: Pinecone top-5 vs a skill-overlap baseline.
 
-Run from the repository root as: python eval_retrieval.py
+Run from the repository root as: python evals/retrieval.py
 
-Method per TRD.md section 5.1: for every job, the baseline "relevant"
+Method per docs/TRD.md section 5.1: for every job, the baseline "relevant"
 candidate set is those candidates sharing at least MIN_SHARED_SKILLS of
 the job's required skills. Pinecone's actual top-5 retrieval is compared
 to that set as precision@5. The baseline is a skill-overlap proxy, not
-ground truth; the README must say so. Writes eval_retrieval_report.json
-in the format defined by BACKEND_SCHEMA.md section 4.
+ground truth; the README must say so. Writes evals/reports/retrieval.json
+in the format defined by docs/BACKEND_SCHEMA.md section 4.
 """
 
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 from typing import Sequence
+
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from pinecone import Pinecone
 
@@ -25,7 +30,7 @@ from src.schemas import CANDIDATE_NAMESPACE, Candidate, Job
 
 TOP_K = 5
 MIN_SHARED_SKILLS = 2
-REPORT_PATH = Path(__file__).resolve().parent / "eval_retrieval_report.json"
+REPORT_PATH = ROOT / "evals" / "reports" / "retrieval.json"
 
 
 def baseline_ids(job: Job, candidates: Sequence[Candidate]) -> set[str]:

@@ -1,9 +1,9 @@
 """Generation groundedness evaluation using OpenAI's Evals framework, wired to Groq.
 
-Run from the repository root as: python eval_generation.py
-(or `python eval_generation.py generate` / `... grade` to run phases apart)
+Run from the repository root as: python evals/generation.py
+(or `python evals/generation.py generate` / `... grade` to run phases apart)
 
-Method per TRD.md section 5.2: generate a rationale for every retrieved
+Method per docs/TRD.md section 5.2: generate a rationale for every retrieved
 candidate with the real pipeline (25 jobs, top-5 each), then grade each
 rationale with a custom evals.Eval subclass. Grading goes through a
 Completion Function Protocol implementation that calls Groq, never
@@ -11,15 +11,14 @@ OpenAI's paid API, per DECISIONS.md D6. A rationale passes only if every
 factual claim in it is supported by the source candidate and job records.
 
 Rate limiting: the Groq free tier allows 8000 tokens per minute for every
-available model (measured: a grading call costs ~750 tokens). Per TRD.md
+available model (measured: a grading call costs ~750 tokens). Per docs/TRD.md
 section 8, requests are paced rather than switching providers: generation
 waits between jobs, and grading passes through a sliding-window token
-limiter. Generated rationales are checkpointed to
-eval_generation_samples.json after each job so an interrupted run resumes
-instead of regenerating.
+limiter. Generated rationales are checkpointed to evals/samples.json after
+each job so an interrupted run resumes instead of regenerating.
 
-Writes eval_generation_report.json in the format defined by
-BACKEND_SCHEMA.md section 4.
+Writes evals/reports/generation.json in the format defined by
+docs/BACKEND_SCHEMA.md section 4.
 """
 
 from __future__ import annotations
@@ -33,6 +32,12 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict
+
+# This script moved from the repository root into evals/, so the root is put
+# back on sys.path for the `from src...` imports below to resolve.
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 # evals.registry builds an OpenAI client at import time and requires
 # OPENAI_API_KEY to be set. This project never calls OpenAI (D6), so a
@@ -53,8 +58,8 @@ from src.data import load_candidates, load_jobs
 from src.match import GROQ_BASE_URL, job_context, match_job
 from src.schemas import Candidate, Job
 
-REPORT_PATH = Path(__file__).resolve().parent / "eval_generation_report.json"
-SAMPLES_PATH = Path(__file__).resolve().parent / "eval_generation_samples.json"
+REPORT_PATH = ROOT / "evals" / "reports" / "generation.json"
+SAMPLES_PATH = ROOT / "evals" / "samples.json"
 
 # Measured Groq free-tier ceilings: 8000 TPM for all chat models.
 # Budgets below keep planned usage at 75% of the cap for headroom.
@@ -238,7 +243,7 @@ class GroundednessEval(evals.Eval):
         }
 
     def run(self, recorder: RecorderBase) -> Dict[str, float]:
-        """Grade all samples and write the BACKEND_SCHEMA.md report."""
+        """Grade all samples and write the docs/BACKEND_SCHEMA.md report."""
         results = self.eval_all_samples(recorder, self._samples, show_progress=True)
         total = len(results)
         passed = sum(1 for result in results if result["passed"])
@@ -324,7 +329,7 @@ def load_samples(model: str) -> list[GroundednessSample]:
     if missing:
         raise SystemExit(
             f"checkpoint is missing {len(missing)} jobs ({missing[:3]}...); "
-            "run: python eval_generation.py generate"
+            "run: python evals/generation.py generate"
         )
     candidates_by_id = {candidate.id: candidate for candidate in load_candidates()}
     jobs_by_id = {job.id: job for job in jobs}
@@ -360,7 +365,7 @@ def grade_samples(samples: list[GroundednessSample], model: str) -> None:
     evaluation = GroundednessEval(
         samples=samples,
         completion_fns=[completion_fn],
-        eval_registry_path=Path(__file__).resolve().parent,
+        eval_registry_path=ROOT,
         name="groundedness.main",
     )
     metrics = evaluation.run(recorder)
@@ -371,7 +376,7 @@ def main() -> None:
     """Run generation, grading, or both. Optional argv[1]: generate | grade."""
     mode = sys.argv[1] if len(sys.argv) > 1 else "all"
     if mode not in {"all", "generate", "grade"}:
-        raise SystemExit("usage: python eval_generation.py [generate|grade]")
+        raise SystemExit("usage: python evals/generation.py [generate|grade]")
     settings = get_settings()
     if mode in {"all", "generate"}:
         generate_samples(settings.groq_model)

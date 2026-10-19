@@ -9,9 +9,11 @@ matching problem worked on adjacent to at a previous company. This project was b
 independently to understand and demonstrate the underlying RAG mechanics:
 embeddings, vector retrieval, grounded generation, and evaluation.
 
-**Status**: in active development. See `PLANNING.md` for current phase
-progress. Nothing in this README describes functionality that has not been
-implemented and verified; sections not yet built are marked accordingly.
+**Status**: backend, evaluation, and frontend are built and verified locally
+against live Pinecone and Groq keys. Not yet deployed, so there is no public
+link. See `PLANNING.md` for current phase progress. Nothing in this README
+describes functionality that has not been implemented and verified; sections
+not yet built are marked accordingly.
 
 ## Architecture
 
@@ -25,7 +27,8 @@ sentence-transformers (all-MiniLM-L6-v2, local, free)
 Pinecone (serverless, free tier, namespaces: "candidates" and "jobs")
         |
         v
-Retrieval: given a job, vector-similarity search for top-k candidates
+Retrieval: the job's stored vector is fetched from the "jobs" namespace, then
+used to query "candidates" for the top-k matches
         |
         v
 Augmented prompt: retrieved candidate text only, nothing invented
@@ -41,9 +44,9 @@ FastAPI returns similarity scores + rationale as JSON
 React + TypeScript frontend: job picker, results with rationale
 ```
 
-Full detail in `TRD.md`. Data shapes in `BACKEND_SCHEMA.md`. Reasoning
+Full detail in `docs/TRD.md`. Data shapes in `docs/BACKEND_SCHEMA.md`. Reasoning
 behind each technical choice in `DECISIONS.md`. Build progress in
-`PLANNING.md`.
+`PLANNING.md`. Frontend design decisions in `docs/DESIGN.md`.
 
 ## Why this design
 
@@ -59,8 +62,13 @@ behind each technical choice in `DECISIONS.md`. Build progress in
 ## Running it locally
 
 ```bash
+# the API alone, which is all the deployed service needs
 pip install -r requirements.txt
+
+# for ingest, the evals, or local development (adds PyTorch and the Evals deps)
+pip install -r requirements-dev.txt
 pip install --no-deps git+https://github.com/openai/evals.git   # eval scripts only (DECISIONS.md D10)
+
 cp .env.example .env   # add PINECONE_API_KEY, PINECONE_INDEX_NAME, GROQ_API_KEY
 
 python data/generate_synthetic_data.py   # optional, data already included
@@ -69,11 +77,24 @@ python -m src.ingest                     # embed profiles and populate Pinecone
 uvicorn api.main:app --reload --port 8000
 ```
 
+Frontend:
+
+```bash
+cd frontend
+npm install
+npm run dev        # http://localhost:5173, talks to the backend above
+```
+
+The frontend reads `VITE_API_BASE_URL` at build time and defaults to
+`http://localhost:8000`. The backend's `CORS_ORIGINS` defaults to the Vite dev
+origins; set it to the deployed frontend origin in production
+(DECISIONS.md D12).
+
 ## Evaluation
 
-Two components, both described in full in `TRD.md` (section 5). Both reports
+Two components, both described in full in `docs/TRD.md` (section 5). Both reports
 come from real runs against Pinecone and Groq; the raw outputs are
-`eval_retrieval_report.json` and `eval_generation_report.json`.
+`evals/reports/retrieval.json` and `evals/reports/generation.json`.
 
 ### Retrieval quality: 0.824 average precision@5
 
@@ -86,9 +107,9 @@ fraction of each job's top-5 inside the baseline set, averaged over all
 jobs. 14 of 25 jobs scored 1.0; the lowest was 0.2. Per-job scores are in
 the report.
 
-Reproduce: `python eval_retrieval.py` (Pinecone key required).
+Reproduce: `python evals/retrieval.py` (Pinecone key required).
 
-### Generation groundedness: 125 of 125 rationales passed
+### Generation groundedness: 124 of 125 rationales passed
 
 Method: every rationale the pipeline generates (25 jobs, top-5 each) is
 graded against the source candidate and job records by a custom eval class
@@ -98,19 +119,37 @@ rationale passes only if every factual claim in it (skills, tools,
 experience, years, location, job requirements) appears in the source
 records; opinions and fit judgments are ignored. The grader is itself an
 LLM, so this checks what that grader can detect rather than proving
-groundedness in the abstract, and a perfect score on extractive synthetic
-summaries is expected. The check earns its place by catching regressions:
-if prompts, data, or the model change, invented claims show up as failures.
+groundedness in the abstract, and a near-perfect score on extractive
+synthetic summaries is expected.
+
+The one failure in the committed run is a real overstatement, not a grader
+quirk. The rationale for `cand_038` against `job_001` says the candidate
+"has over nine years of experience"; the source record says
+`years_experience: 9`.
+
+**This number is a single run, not a fixed property.** Generation samples at
+`temperature=0.2`, so a rerun writes new wording: 123 of 125 rationales came
+out different in a second full run, while retrieval returned the identical
+candidate set. An earlier run of the same code scored 125 of 125. Expect a
+score in the high 120s, and treat a drop into the 110s or lower as a real
+regression rather than sampling noise.
+
+What the check is actually for is catching regressions: if the prompt, the
+data, or the model change in a way that breaks grounding, failures climb
+instead of fluctuating by one. That the grader is discriminating rather than
+rubber-stamping is verified separately, by feeding it three tampered
+rationales and confirming it rejects all three while accepting an honest one
+(`python evals/grounding_control.py`).
 
 Rate limits: the Groq free tier allows 8000 tokens per minute, so the eval
-paces itself per `TRD.md` section 8: about 26 seconds between generation
+paces itself per `docs/TRD.md` section 8: about 26 seconds between generation
 jobs, and a sliding-window token limiter during grading (125 grades took
 about 17 minutes). Generated rationales are checkpointed to
-`eval_generation_samples.json`, so an interrupted run resumes instead of
+`evals/samples.json`, so an interrupted run resumes instead of
 regenerating.
 
-Reproduce: `python eval_generation.py` (both phases, about 30 minutes
-end to end), or `python eval_generation.py generate` / `... grade` to run
+Reproduce: `python evals/generation.py` (both phases, about 30 minutes
+end to end), or `python evals/generation.py generate` / `... grade` to run
 them apart.
 
 ## What's next

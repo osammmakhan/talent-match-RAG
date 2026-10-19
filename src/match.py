@@ -1,6 +1,6 @@
 """Retrieval and grounded generation for job to candidate matching.
 
-Pipeline per TRD.md: look up the job's stored vector in the Pinecone "jobs"
+Pipeline per docs/TRD.md: look up the job's stored vector in the Pinecone "jobs"
 namespace, query the "candidates" namespace for top-k vector similarity, then
 ask Groq for a short rationale per candidate, grounded strictly in the
 retrieved candidate metadata.
@@ -13,6 +13,7 @@ src/ingest.py. See DECISIONS.md D13.
 
 from __future__ import annotations
 
+import logging
 from concurrent.futures import ThreadPoolExecutor
 from typing import Any
 
@@ -27,6 +28,8 @@ from src.schemas import (
     MatchResponse,
     MatchResult,
 )
+
+logger = logging.getLogger(__name__)
 
 GROQ_BASE_URL = "https://api.groq.com/openai/v1"
 
@@ -73,7 +76,7 @@ def candidate_context(metadata: dict[str, Any]) -> str:
     """Flatten retrieved candidate metadata into source text for the prompt.
 
     Pinecone metadata values are flat, so the comma-joined skills string is
-    split back into a list here per BACKEND_SCHEMA.md section 5.
+    split back into a list here per docs/BACKEND_SCHEMA.md section 5.
     """
     skills = [
         skill.strip()
@@ -145,9 +148,24 @@ def match_job(job: Job, top_k: int | None = None) -> MatchResponse:
     )
     matches = list(query_result.matches)
 
-    def rationale_for(match: Any) -> str:
+    def rationale_for(match: Any) -> str | None:
+        """Return one rationale, or None if that single generation failed.
+
+        Deliberately scoped to the individual candidate: retrieval already
+        succeeded and its similarity score is valid, so one generation failure
+        must not discard the whole response. See DECISIONS.md D16.
+        """
         metadata = dict(match.metadata or {})
-        return generate_rationale(client, settings, job, match.id, metadata)
+        try:
+            return generate_rationale(client, settings, job, match.id, metadata)
+        except Exception:
+            logger.warning(
+                "rationale generation failed for %s on %s",
+                match.id,
+                job.id,
+                exc_info=True,
+            )
+            return None
 
     with ThreadPoolExecutor(max_workers=min(5, max(1, len(matches)))) as executor:
         rationales = list(executor.map(rationale_for, matches))

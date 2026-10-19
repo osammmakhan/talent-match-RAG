@@ -1,7 +1,7 @@
 """Environment-driven configuration for the Talent Match RAG pipeline.
 
 Required variables: PINECONE_API_KEY, GROQ_API_KEY. The remaining
-variables have defaults matching .env.example and TRD.md section 4.
+variables have defaults matching .env.example and docs/TRD.md section 4.
 """
 
 from __future__ import annotations

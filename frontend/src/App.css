@@ -1,0 +1,896 @@
+/**
+ * Layout and components for the match results surface.
+ * Structure mirrors the approved Stitch design: sticky dark top bar, an intro
+ * card, then a 12-column grid with a sticky job rail at 4 columns and the
+ * results at 8. Tokens live in tokens.css, loaded once from main.tsx.
+ */
+
+/* ---------- top bar ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  width: 100%;
+  background: var(--bar);
+  color: #fff;
+  border-bottom: 1px solid var(--n800);
+}
+
+.topbar-in {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 640px) {
+  .topbar-in {
+    padding: 10px 24px;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 16px;
+  height: 16px;
+  background: var(--mark);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.brand-mark span {
+  width: 6px;
+  height: 6px;
+  background: #000;
+  border-radius: 0.5px;
+}
+
+.brand-name {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--n100);
+}
+
+.repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--n400);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .repo:hover {
+    color: #fff;
+  }
+}
+
+.repo svg {
+  width: 14px;
+  height: 14px;
+  color: var(--n500);
+  flex: none;
+}
+
+/* ---------- page ---------- */
+
+.page {
+  width: 100%;
+  flex: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+@media (min-width: 640px) {
+  .page {
+    padding: 24px 24px 64px;
+  }
+}
+
+.intro {
+  margin-bottom: 28px;
+  background: var(--card);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+@media (min-width: 640px) {
+  .intro {
+    padding: 24px;
+  }
+}
+
+.intro h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.375;
+}
+
+@media (min-width: 640px) {
+  .intro h1 {
+    font-size: 22px;
+  }
+}
+
+.intro p {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.625;
+  color: #4b5563;
+  max-width: 768px;
+}
+
+@media (min-width: 640px) {
+  .intro p {
+    font-size: 13px;
+  }
+}
+
+/* ---------- grid ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+/* Column spans only exist once the 12-column grid does. Declared outside the
+   breakpoint they resolved to eight implicit zero-width tracks at 390px. */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .rail {
+    grid-column: span 4;
+    position: sticky;
+    top: 64px;
+  }
+
+  .results {
+    grid-column: span 8;
+  }
+}
+
+/* ---------- rail card ---------- */
+
+.railcard {
+  background: var(--card);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.railcard > * + * {
+  border-top: 1px solid var(--n50);
+}
+
+.railblock {
+  padding: 16px;
+}
+
+.railblock-job {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.selectwrap {
+  position: relative;
+  margin-top: 6px;
+}
+
+.select {
+  width: 100%;
+  appearance: none;
+  background: var(--card);
+  border: 1px solid var(--n300);
+  border-radius: 6px;
+  padding: 8px 36px 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--n900);
+}
+
+@media (min-width: 640px) {
+  .select {
+    font-size: 14px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .select:hover {
+    border-color: var(--n400);
+  }
+}
+
+.select:disabled {
+  background: var(--n100);
+  color: var(--n500);
+  cursor: not-allowed;
+}
+
+.selectwrap .chev {
+  position: absolute;
+  inset: 0 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: var(--n500);
+  pointer-events: none;
+}
+
+.chev svg {
+  width: 16px;
+  height: 16px;
+}
+
+.jobtitle {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--n900);
+}
+
+.jobmeta {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--n500);
+}
+
+.jobmeta .min {
+  font-weight: 500;
+  color: var(--n700);
+}
+
+/* No border: a bordered panel inside the bordered rail card read as a box
+   inside a box. The recessed fill is enough to separate it. */
+.jobbrief {
+  background: var(--n50);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.jobbrief .field-label {
+  margin-bottom: 4px;
+}
+
+.jobbrief p {
+  font-size: 12px;
+  line-height: 1.625;
+  color: var(--n700);
+}
+
+.skillhead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.count {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--n600);
+  white-space: nowrap;
+}
+
+/* List semantics, inline wrap, same chip as the results. No hover, no pointer,
+   not focusable: these are data, not controls. */
+.skilllist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.skilllist li {
+  display: flex;
+}
+
+.run {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.run-go {
+  background: #0f172a;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Busy, not unavailable. Kept in the tab order on purpose so a keyboard user
+   does not lose focus during a cold start, so the label is n600 at 7.17:1
+   rather than n500 at 4.35:1, and the cursor no longer claims the action is
+   unavailable when pressing it again simply does nothing yet. */
+.run-idle {
+  background: var(--n100);
+  color: var(--n600);
+  cursor: default;
+}
+
+/* ---------- results head ---------- */
+
+.reshead {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--n200);
+}
+
+@media (min-width: 640px) {
+  .reshead {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .reshead .shown {
+    margin-left: auto;
+  }
+}
+
+.reshead h2 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--n800);
+}
+
+.reshead .shown {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--n500);
+}
+
+/* ---------- candidate card ---------- */
+
+.record {
+  background: var(--card);
+  border: 1px solid var(--n200);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  animation: record-in var(--d-reveal) var(--ease-out) both;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .record {
+    transition: border-color var(--d-press) var(--ease-out);
+  }
+
+  .record:hover {
+    border-color: var(--n300);
+  }
+}
+
+@keyframes record-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.record-head {
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--n100);
+}
+
+@media (min-width: 640px) {
+  .record-head {
+    padding: 20px;
+  }
+}
+
+.ident {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius);
+  background: var(--n900);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  flex: none;
+  margin-top: 2px;
+}
+
+.idline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cid {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--n900);
+}
+
+.rolechip {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--n600);
+  background: var(--n100);
+  padding: 2px 6px;
+  border-radius: var(--radius);
+  border: 1px solid var(--n200);
+}
+
+.sub {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--n600);
+}
+
+.expchip {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--n700);
+  background: var(--n100);
+  padding: 2px 8px;
+  border-radius: var(--radius);
+}
+
+.sub .dot {
+  color: var(--n300);
+}
+
+.sub .where {
+  color: var(--n500);
+}
+
+.score {
+  text-align: right;
+  flex: none;
+}
+
+/* The caption "match score, out of 100" is about 158px wide in mono at 12px.
+   Side by side with the identity block that leaves roughly 70px for the
+   candidate id at 390px, which broke the experience chip across two lines. Below
+   the tablet breakpoint the score drops to its own row and keeps its
+   right alignment, so the identity block gets the full width again. */
+@media (max-width: 639px) {
+  .record-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .score {
+    text-align: right;
+  }
+
+  /* 44px minimum touch targets. Measured at 390px before this: the select was
+     36px, the action 38px, the disclosure 41px and the repository link 18px.
+     Desktop is untouched, because a pointer does not need the larger target. */
+  .select,
+  .run,
+  .retry,
+  .repo,
+  .profile > summary {
+    min-height: 44px;
+  }
+}
+
+.score-num {
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  color: var(--n900);
+}
+
+.score-cap {
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--n600);
+}
+
+.score-none {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--n600);
+}
+
+.why {
+  padding: 14px 16px;
+}
+
+@media (min-width: 640px) {
+  .why {
+    padding: 14px 20px;
+  }
+}
+
+.why-label {
+  margin-bottom: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--n500);
+}
+
+/* Deliberately plain. The rationale is model-written text; no markup is
+   injected into it, because a heuristic that bolds a skill name would also
+   bold it inside a clause that denies it. */
+.why-body {
+  font-size: 14px;
+  line-height: 1.625;
+  color: var(--n800);
+}
+
+.breakdown {
+  padding: 4px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+}
+
+@media (min-width: 640px) {
+  .breakdown {
+    padding: 4px 20px 20px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .row {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.row-label {
+  margin-bottom: 4px;
+}
+
+@media (min-width: 640px) {
+  .row-label {
+    margin-bottom: 0;
+  }
+}
+
+.row-label.hit {
+  color: var(--hit-ink);
+}
+
+.row-label.gap {
+  color: var(--gap-ink);
+}
+
+.row-label.rest {
+  color: var(--n600);
+  font-weight: 500;
+}
+
+.row-other {
+  padding-top: 6px;
+  border-top: 1px solid var(--n100);
+}
+
+.row-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row-chips > li {
+  display: flex;
+}
+
+/* ---------- partial result ---------- */
+
+/* A full inset notice, not a left accent bar. The 2px border-left with
+   left-only radius was carried over from the datasheet and reads as the
+   side-tab tell rather than as part of this surface's vocabulary. */
+.partial-note {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--n700);
+  background: var(--n50);
+  border: 1px solid var(--n200);
+  border-radius: var(--radius-lg);
+  padding: 10px 12px;
+}
+
+.rationale-missing {
+  font-size: 14px;
+  line-height: 1.625;
+  color: var(--n700);
+}
+
+/* ---------- disclosure ---------- */
+
+.profile {
+  border-top: 1px solid var(--n100);
+}
+
+.profile > summary {
+  cursor: pointer;
+  padding: 12px 16px 12px 20px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--n500);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile > summary::-webkit-details-marker {
+  display: none;
+}
+
+.profile > summary::before {
+  content: "+";
+  font-family: var(--mono);
+}
+
+.profile[open] > summary::before {
+  content: "\2212";
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .profile > summary:hover {
+    color: var(--n900);
+  }
+}
+
+.profile-body {
+  padding: 0 20px 16px;
+  font-size: 13px;
+  color: var(--n600);
+}
+
+.profile-src {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--n500);
+}
+
+/* ---------- states ---------- */
+
+.notice {
+  background: var(--card);
+  border: 1px solid var(--n200);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.notice-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--n900);
+}
+
+.notice-body {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.625;
+  color: var(--n700);
+  max-width: 62ch;
+}
+
+.notice-error {
+  border-color: #fecaca;
+}
+
+.notice-detail {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--n700);
+  background: var(--n50);
+  border: 1px solid var(--n100);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  overflow-wrap: anywhere;
+}
+
+.notice-recovery {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.625;
+  color: var(--n700);
+  max-width: 62ch;
+}
+
+.retry {
+  margin-top: 14px;
+  padding: 9px 16px;
+  background: #0f172a;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wait {
+  background: var(--card);
+  border: 1px solid var(--n200);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+
+.wait-line {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--n700);
+}
+
+.wait-secs {
+  font-weight: 700;
+  color: var(--n900);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeleton {
+  background: var(--card);
+  border: 1px solid var(--n200);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sk {
+  display: block;
+  border-radius: var(--radius);
+  background: var(--n100);
+}
+
+.sk-id {
+  width: 40%;
+  height: 16px;
+}
+
+.sk-val {
+  width: 22%;
+  height: 24px;
+}
+
+.sk-line {
+  width: 100%;
+  height: 56px;
+}
+
+.skeleton-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ---------- footer ---------- */
+
+.foot {
+  width: 100%;
+  margin-top: 48px;
+  border-top: 1px solid rgba(229, 229, 229, 0.8);
+  background: var(--card);
+  padding: 24px 0;
+}
+
+.foot-in {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .foot-in {
+    padding: 0 24px;
+  }
+}
+
+.foot p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--n500);
+  max-width: 768px;
+}

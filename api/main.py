@@ -1,6 +1,6 @@
 """FastAPI application exposing the Talent Match RAG pipeline.
 
-Endpoints per TRD.md section 3: GET /health, GET /jobs, GET /candidates,
+Endpoints per docs/TRD.md section 3: GET /health, GET /jobs, GET /candidates,
 POST /match/{job_id}?top_k=5.
 """
 

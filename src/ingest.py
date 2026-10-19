@@ -3,8 +3,8 @@
 Run from the repository root as: python -m src.ingest
 
 Creates the serverless index if it does not exist: 384 dimensions with the
-default all-MiniLM-L6-v2 model, cosine metric, per TRD.md. Upserts all
-records into the "candidates" and "jobs" namespaces per BACKEND_SCHEMA.md.
+default all-MiniLM-L6-v2 model, cosine metric, per docs/TRD.md. Upserts all
+records into the "candidates" and "jobs" namespaces per docs/BACKEND_SCHEMA.md.
 """
 
 from __future__ import annotations

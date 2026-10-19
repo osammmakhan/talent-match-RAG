@@ -1,0 +1,213 @@
+/**
+ * Design tokens and base styles for the match results surface.
+ *
+ * Palette is Tailwind's neutral scale on a near-white page, plus three chip
+ * colours that each carry exactly one meaning: blue for a skill the job asks
+ * for, green for a skill listed in the profile, amber for a job skill the
+ * profile does not list. Nothing else is coloured.
+ *
+ * Every ratio below was measured against the rendered value, not estimated.
+ * --n400 is the trap: it reads fine on the dark top bar and collapses on a
+ * white card, so it is only ever used on --bar. Text on --card never goes
+ * below --n500.
+ *
+ * Functional labels sit at 11px, never 10px: below an 11px floor they fail on
+ * high-DPI displays and small viewports.
+ */
+
+:root {
+  --page: #fafafa;
+  --card: #ffffff;
+  --bar: #0d0f12;
+
+  --n50: #fafafa;
+  --n100: #f5f5f5;
+  --n200: #e5e5e5;
+  --n300: #d4d4d4;
+  --n400: #a3a3a3;
+  --n500: #737373;
+  --n600: #525252;
+  --n700: #404040;
+  --n800: #262626;
+  --n900: #171717;
+  --ink: #111111;
+
+  --hit-bg: #ecfdf5;
+  --hit-bd: #a7f3d0;
+  --hit-ink: #065f46;
+
+  --gap-bg: #fffbeb;
+  --gap-bd: #fde68a;
+  --gap-ink: #92400e;
+
+  --focus: #2563eb;
+  --mark: #3b82f6;
+
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --radius: 4px;
+  --radius-lg: 8px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --d-press: 160ms;
+  --d-reveal: 220ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The app renders into #root, so body has exactly one child. Laying the
+   column out on body left the page shorter than the viewport and left a band
+   of background under the footer on every short page. */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+button,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--n900);
+  color: var(--card);
+}
+
+/* Blue, not ink: on the dark top bar an ink ring is invisible, and blue is
+   already the accent the surface uses for job skills. */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Visually hidden, still exposed to assistive technology. Used for the results
+   region's name, which has to resolve in every state including the empty one. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.value-mono {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--n700);
+}
+
+.field-label-sm {
+  font-size: 11px;
+  color: var(--n600);
+}
+
+/* Uppercase mono is used in exactly three places: the three skill-comparison
+   row labels, the rationale label, and the disclosure summary. The row labels
+   have to read as one aligned set; the other two match them. Every other label
+   on the surface is sentence-case sans. */
+.row-label {
+  width: 96px;
+  flex: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius);
+  font-family: var(--mono);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tag-hit {
+  background: var(--hit-bg);
+  color: var(--hit-ink);
+  border: 1px solid var(--hit-bd);
+  font-weight: 500;
+}
+
+.tag-gap {
+  background: var(--gap-bg);
+  color: var(--gap-ink);
+  border: 1px dashed var(--gap-bd);
+}
+
+.tag-rest {
+  background: var(--n100);
+  color: var(--n600);
+}
+
+/* The tick and cross glyphs are functional marks, so they hold the 11px floor
+   like every other label on the surface. */
+.tag-mark {
+  font-size: 11px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    /* Zeroing only the duration left the stagger delay in force, and with
+       fill-mode both the later records sat at opacity 0 for up to 160ms under
+       the setting that exists to remove exactly that. */
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,15 @@
+# Normalise line endings in the repository and keep LF in the working tree.
+# The project is authored on Windows and deployed to Linux; without this, git
+# reports JSON and eval outputs as permanently modified because the working
+# tree holds CRLF where the index recorded LF. It also risks shipping CRLF to
+# a Linux host, which breaks shebang scripts.
+* text=auto eol=lf
+
+# Binary assets are never line-ending translated.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary

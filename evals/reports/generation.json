@@ -1,0 +1,15 @@
+{
+  "method": "openai_evals_custom_groundedness_check",
+  "completion_provider": "groq",
+  "total_rationales_checked": 125,
+  "passed": 124,
+  "failed": 1,
+  "pass_rate": 0.992,
+  "failures": [
+    {
+      "candidate_id": "cand_038",
+      "job_id": "job_001",
+      "invented_claim": "\"has over nine years of experience\""
+    }
+  ]
+}

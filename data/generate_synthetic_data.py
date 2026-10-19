@@ -4,7 +4,7 @@ Writes candidates.json (40 records) and jobs.json (25 records) into this
 directory. Deterministic for a fixed RANDOM_SEED. Uses only the standard
 library: plain random sampling from fixed title, skill, and city lists.
 
-Data shapes follow BACKEND_SCHEMA.md. Skills are sampled from per-title
+Data shapes follow docs/BACKEND_SCHEMA.md. Skills are sampled from per-title
 pools so that jobs and candidates with the same title share skills, which
 gives the skill-overlap retrieval baseline a real signal to measure.
 """

@@ -174,3 +174,15 @@ Log of key technical and scope decisions, in the order they were made. New decis
 
 **Scope**: Documentation and reporting only. No change to the eval script, the grader, the generation prompt, the retrieval stage, or any API contract.
 
+### D19: Pin httpx in the runtime requirements, not only in dev
+**Decision**: `httpx==0.27.2` is pinned in `requirements.txt`, the set Render installs, and the duplicate pin was removed from `requirements-dev.txt`, which already includes it.
+
+**Why it became necessary**: the first Render smoke test returned 500 on `POST /match/job_001` with `Pipeline failed: Client.__init__() got an unexpected keyword argument 'proxies'`, while `/health`, `/jobs`, and `/candidates` all returned 200. `openai` 1.42.0 passes `proxies=` to `httpx.Client` on every construction (`openai/_base_client.py:848`), and `httpx` 0.28.0 removed that keyword. The range declared by openai is `httpx<1,>=0.23.0`, which admits 0.28.1, so a plain install on a clean machine resolves to 0.28.1 and client construction raises.
+
+**Why only /match failed**: `src/match.py:143` is the only place in the request path that constructs an `OpenAI` client. `/jobs` and `/candidates` read local JSON, and stored job vectors are fetched from Pinecone rather than embedded at request time (D13). The one endpoint that did build the client was the one that failed, so three green endpoints hid a completely broken pipeline.
+
+**Why local development did not catch it**: `requirements-dev.txt` had carried `httpx==0.27.2` as a test-client pin since before the deployment, so every local environment was already on the version that still accepts `proxies`. The pin existed, just in the file the web service does not install. The code was correct on every machine except the one that mattered.
+
+**Alternative considered**: upgrading `openai` to a release that does not pass `proxies` unconditionally. Rejected: D11 pins exact versions deliberately, and raising a pinned top-level dependency to work around a transitive one is a wider blast radius than pinning the transitive dependency itself. `httpx==0.27.2` also satisfies `pinecone` 10.0.0, which requires `httpx[http2]>=0.27,<1.0`.
+
+**Scope**: dependency pinning only. No change to application code, the API contract, or the evals.

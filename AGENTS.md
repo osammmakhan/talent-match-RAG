@@ -19,10 +19,6 @@ Instructions for any coding agent (OpenCode, or others) operating in this reposi
 - **Everything must stay free.** Every service used needs a free tier sufficient for this project's scale. If a chosen approach would incur real cost at this project's scale, stop and flag it rather than proceeding.
 - **This is a demo-grade project, deliberately.** Don't add authentication, horizontal scaling, monitoring/observability infrastructure, or other production-grade concerns unless explicitly asked. Docker and CI are deferred, not needed yet (see PLANNING.md).
 
-## Open item requiring user input before frontend work starts
-
-DECISIONS.md D8: the user named "UI/UX Pro Max skill" for this project's UI work, which conflicts with a previously stated preference to avoid UI/UX Pro Max in favor of Vercel's Web Design Guidelines stacked with the Emil Kowalski skill. Do not pick one silently. Ask the user to confirm before Phase 3 (frontend) styling work begins.
-
 ## Commands
 
 ```bash

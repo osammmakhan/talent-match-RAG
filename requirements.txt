@@ -19,3 +19,11 @@ pydantic==2.13.5
 python-dotenv==1.0.1
 pinecone==10.0.0
 openai==1.42.0
+# Transitive, but pinned because it decides whether the app runs at all.
+# openai 1.42.0 passes proxies= to httpx.Client on every construction
+# (openai/_base_client.py:848), and httpx 0.28.0 removed that keyword. Its
+# declared range is httpx<1,>=0.23.0, so an unpinned install resolves to
+# 0.28.1 and POST /match fails with "Client.__init__() got an unexpected
+# keyword argument 'proxies'". The other endpoints do not build the client, so
+# they kept working and hid it. First hit in the Render deployment. D19.
+httpx==0.27.2

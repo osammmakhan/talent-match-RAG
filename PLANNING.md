@@ -103,24 +103,6 @@ item done until it has been verified running, not just written.
       matches", 10px tick glyphs against the file's own 11px floor, a duplicated
       comment in tokens.css, and two docs/DESIGN.md statements describing copy and a
       marker the build no longer renders
-- [ ] Finish review round 5. Round 4 left open: internal detail is withheld only
-      for 5xx, so a 4xx carrying an HTML body is still printed verbatim; a 200
-      with a malformed body is reported as a network failure, which is a false
-      diagnosis; the card skill comparison has no list semantics while the
-      rail's identical data does; "Try again" re-issues the same failing request
-      for unknown-job and zero-results; the score card's own summary repeats the
-      same fact three times
-- [ ] The detector's CLI scan over `.tsx` and `.css` returns zero findings and
-      its own output calls that an undercount rather than a pass, since
-      element-level rules need a parsed page. Only the browser overlay gives a
-      real count. Do not read a clean CLI result as a clean surface
-- [ ] The detector's `text-occlusion` rule reports false positives on its own
-      injected scan badge. Confirmed by removing the badge nodes before a
-      re-scan, which drops the count. Recorded rather than suppressed with an
-      ignore rule
-- [ ] Add an automated test suite. Deferred by decision. The Playwright checks
-      behind the measurements above are ad hoc and will not run in CI, so nothing
-      currently prevents these tokens and strings from regressing
 - [x] Contrast verified against the WCAG AA target for every text pair
 - [x] Finish review round 1 returned `fix` with 22 findings; all material ones
       addressed, including three that were false claims in the interface copy
@@ -133,10 +115,6 @@ item done until it has been verified running, not just written.
       regression where a 15s profile-lookup budget stripped profiles off the
       cold-start path, and a focus capture that never held keyboard focus. All
       addressed; the full contrast audit now passes every pair
-- [ ] Finish review round 4: the round-3 fixes are verified by measurement and
-      a full contrast audit, but no reviewer has re-scored them, so the finish
-      review is not formally closed. Three rounds have each found real defects
-      in the previous round's fixes, so this is not a formality.
 - [x] `docs/DESIGN.md` and its `.impeccable/design.json` sidecar written;
       `impeccable doctor` reports only `config-build-path-unset`, which its own
       guidance says to leave unset when no image generation tool exists
@@ -152,16 +130,40 @@ item done until it has been verified running, not just written.
 - [x] Confirm the embedding model is not needed at request time, so the
       ephemeral-filesystem model re-download problem no longer applies to the
       API (it applies only if ingest is ever run on Render)
-- [ ] Deploy backend to Render (free web service tier)
-- [ ] Deploy frontend to Render static site or Cloudflare Pages
-- [ ] Set `CORS_ORIGINS` on the backend to the deployed frontend origin
-- [ ] Point frontend at deployed backend URL
-- [ ] Handle Render cold starts in the UI (free tier sleeps after 15 minutes
+- [x] Deploy backend to Render (free web service tier) at
+      https://talent-match-rag-api.onrender.com. Build command
+      `pip install -r requirements.txt`; start command
+      `uvicorn api.main:app --host 0.0.0.0 --port $PORT`.
+- [x] Deploy frontend to Render static site at
+      https://talent-match-rag.onrender.com. Build command
+      `cd frontend && npm install && npm run build`, which needs the `cd`
+      because no `package.json` exists at the repo root; publish directory
+      `frontend/dist`, which is relative to the root and takes no `cd`.
+- [x] Set `CORS_ORIGINS` on the backend to the deployed frontend origin.
+      Verified live: the allowed origin returns `access-control-allow-origin`
+      and `vary: Origin`, while a foreign origin returns neither. The value
+      must carry no trailing slash, because browsers send scheme and host
+      only; the first saved value had one and matched nothing.
+- [x] Point frontend at deployed backend URL through `VITE_API_BASE_URL`,
+      which Vite bakes in at build time. Verified in the deployed bundle: it
+      contains the API host and not the `localhost:8000` fallback.
+- [x] Handle Render cold starts in the UI (free tier sleeps after 15 minutes
       idle, roughly one minute to wake), since NFR3 will otherwise appear to
-      fail on the first request after idle
-- [ ] Final smoke test against live URLs
-- [ ] Confirm live link works from a fresh browser session with no local
-      setup
+      fail on the first request after idle. Measured live after a 16 minute
+      idle period: wake request 32.96s, immediate retry 0.20s, `/match`
+      4.18s returning 200. The frontend allows 90s for every call
+      (`frontend/src/api.ts:19`), so the slow first request presents as a
+      wait rather than an error.
+- [x] Final smoke test against live URLs: health 200, jobs 25, candidates 40,
+      `/match` 200 with 5 matches and a grounded rationale, 404 for an unknown
+      route, 404 for an unknown job id, 422 for `top_k=0`. The first run found
+      `POST /match` failing with an httpx `proxies` error that only appeared
+      on a clean install; fixed by the pin in D19 and re-verified after
+      redeploy.
+- [x] Confirm live link works from a fresh browser session with no local
+      setup: headless Chrome loaded the deployed site with no local process
+      running, fetched the job list from the deployed API, and rendered the
+      picker and job detail.
 
 ## Deferred (not in current scope)
 

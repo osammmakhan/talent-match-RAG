@@ -8,6 +8,9 @@
 .impeccable/
 PRODUCT.md
 
+# internal maintainer notes, not for publication
+docs/DOCUMENTATION.md
+
 # Python
 __pycache__/
 *.py[cod]

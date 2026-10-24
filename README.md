@@ -8,6 +8,16 @@ only facts present in the retrieved records.
 [Live API](https://talent-match-rag-api.onrender.com) ·
 [Repository](https://github.com/osammmakhan/talent-match-RAG)
 
+![The live interface with the ML Engineer job in Zurich selected, showing five ranked candidate matches, each with a match score out of 100, a short rationale, and a breakdown of the job's required skills that the candidate has and is missing](docs/screenshot.png)
+
+**At a glance**
+
+- **0.824** average precision@5, measured against a skill-overlap proxy rather
+  than labeled ground truth
+- **124 of 125** rationales passed the groundedness check, from a single
+  committed run rather than a fixed property
+- **3 of 3** tampered rationales rejected by the grader's negative control
+
 ---
 
 ## Contents
@@ -37,6 +47,15 @@ mechanics of a RAG system end to end: embedding records, retrieving the
 relevant subset by vector similarity, and generating an explanation that a
 reader can check against the source data.
 
+**What it does**
+
+- Embeds and stores 25 jobs and 40 candidate profiles in a vector index
+- Retrieves the closest candidates for any chosen job by cosine similarity
+- Generates a per-candidate rationale that cites only the retrieved text
+- Scores its own retrieval quality and the factual grounding of its own output
+- Ships a browser interface for running a search without touching the API
+- Runs entirely on free tiers, by design
+
 The problem it models is a real one: given a job posting, which candidates are
 actually worth a look, and why? A similarity score alone answers neither
 question. The score says how close the wording is, not whether a person fits,
@@ -47,15 +66,6 @@ strictly from the retrieved candidate and job records.
 The motivating problem came from a candidate-to-job matching workflow seen at
 a previous company. Nothing from that company appears here: no real
 candidates, no real job postings, no real data of any kind.
-
-**What it does**
-
-- Embeds and stores 25 jobs and 40 candidate profiles in a vector index
-- Retrieves the closest candidates for any chosen job by cosine similarity
-- Generates a per-candidate rationale that cites only the retrieved text
-- Scores its own retrieval quality and the factual grounding of its own output
-- Ships a browser interface for running a search without touching the API
-- Runs entirely on free tiers, by design
 
 ---
 
@@ -455,8 +465,8 @@ docs/
   TRD.md              technical design
   BACKEND_SCHEMA.md   exact data shapes
   DESIGN.md           interface design decisions
-DECISIONS.md          technical decisions D1 through D19, with rationale
-PLANNING.md           phase checklist, 44 of 44 complete
+DECISIONS.md          technical decisions, with rationale
+PLANNING.md           phase checklist
 AGENTS.md             instructions for coding agents working in this repo
 requirements.txt      dependencies installed by the deployed API
 requirements-dev.txt  dependencies for ingest, evals, and local development
@@ -475,7 +485,6 @@ requirements-dev.txt  dependencies for ingest, evals, and local development
 | Evaluation | OpenAI Evals framework with a Groq completion function |
 | Frontend | React, TypeScript, Vite, oxlint |
 | Hosting | Render free tier, web service plus static site |
-| Interface design | `impeccable` for structure and verification, `emil-design-eng` for craft |
 
 Everything runs on a free tier or locally. There is no paid service anywhere
 in the stack.
@@ -489,9 +498,8 @@ local environment still worked. That is recorded as `DECISIONS.md` D19.
 
 ## Design decisions
 
-Decisions are written down rather than implied. `DECISIONS.md` contains 19
-entries covering why each choice was made and what it costs. The ones that
-shape the project most:
+Decisions are written down rather than implied. `DECISIONS.md` records why
+each choice was made and what it costs. The ones that shape the project most:
 
 - **D8** Frontend design tooling: `impeccable` owns structure, accessibility,
   and verification; `emil-design-eng` owns motion and craft. The two are

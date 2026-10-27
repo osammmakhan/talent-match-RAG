@@ -1,5 +1,7 @@
 # Talent Match RAG
 
+[![Talent Match RAG Logo](/osammmakhan/talent-match-RAG/raw/main/frontend/public/favicon.svg)](/osammmakhan/talent-match-RAG/blob/main/frontend/public/favicon.svg)
+
 A retrieval-augmented generation pipeline that matches synthetic job postings
 to synthetic candidate profiles and explains each match in plain English, using
 only facts present in the retrieved records.
@@ -8,7 +10,7 @@ only facts present in the retrieved records.
 [Live API](https://talent-match-rag-api.onrender.com) ·
 [Repository](https://github.com/osammmakhan/talent-match-RAG)
 
-![The live interface with the ML Engineer job in Zurich selected, showing five ranked candidate matches, each with a match score out of 100, a short rationale, and a breakdown of the job's required skills that the candidate has and is missing](docs/screenshot.png)
+![Screen recording of the live interface, with the ML Engineer job in Zurich selected and five ranked candidate matches shown, each carrying a match score out of 100, a short rationale, and a breakdown of the job's required skills the candidate has and is missing](docs/Talent%20Match%20RAG%20Demo%20GIF%2030%20FPS.gif)
 
 **At a glance**
 

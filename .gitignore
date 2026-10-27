@@ -11,6 +11,9 @@ PRODUCT.md
 # internal maintainer notes, not for publication
 docs/DOCUMENTATION.md
 
+# raw demo recording, not referenced by any doc
+docs/Talent Match RAG Demo.mp4
+
 # Python
 __pycache__/
 *.py[cod]
